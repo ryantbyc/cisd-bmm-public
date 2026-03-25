@@ -64,6 +64,36 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
+    /* Section controls bar */
+    .section-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0.75rem;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      font-size: 0.82rem;
+      color: #666;
+    }
+
+    .section-controls span { margin-right: 0.25rem; }
+
+    .ctrl-btn {
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #f0f4fa;
+      color: #1a3a5c;
+      border: 1px solid #c8d8f0;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .ctrl-btn:hover { background: #dce8f8; }
+
     /* Section headers */
     .section-label {
       font-size: 0.8rem;
@@ -74,11 +104,31 @@
       background: #e8f0fe;
       border-left: 4px solid #1a3a5c;
       padding: 0.45rem 0.85rem;
-      margin: 2rem 0 0.65rem;
+      margin: 2rem 0 0;
       border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+      transition: background 0.12s;
     }
 
     .section-label:first-child { margin-top: 0; }
+    .section-label:hover { background: #d4e4fc; }
+    .section-label.collapsed { background: #f0f4fa; color: #4a6a9c; border-left-color: #9ab0d0; }
+
+    .section-arrow {
+      font-size: 0.65rem;
+      transition: transform 0.18s;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .section-label.collapsed .section-arrow { transform: rotate(-90deg); }
+
+    .section-items { margin-bottom: 0.5rem; padding-top: 0.65rem; }
+    .section-items.collapsed { display: none; }
 
     /* Agenda items */
     .agenda-item {
@@ -285,6 +335,11 @@
 
     <div id="tab-agenda" class="tab-panel active">
       <div id="procedural-section"></div>
+      <div id="section-controls" class="section-controls" style="display:none">
+        <span>Sections:</span>
+        <button class="ctrl-btn" id="btn-expand-all">Expand All</button>
+        <button class="ctrl-btn" id="btn-collapse-all">Collapse All</button>
+      </div>
       <div id="agenda-items"></div>
     </div>
 
@@ -350,12 +405,28 @@
     }
   }
 
+  // Tracks all { label, wrapper } pairs for expand/collapse all
+  const allSections = [];
+
+  function toggleSection(label, wrapper, forceOpen) {
+    const opening = forceOpen !== undefined ? forceOpen : label.classList.contains('collapsed');
+    if (opening) {
+      label.classList.remove('collapsed');
+      wrapper.classList.remove('collapsed');
+    } else {
+      label.classList.add('collapsed');
+      wrapper.classList.add('collapsed');
+    }
+  }
+
   function renderAgenda(sections) {
     const container = document.getElementById('agenda-items');
     const proceduralEl = document.getElementById('procedural-section');
+    const controls = document.getElementById('section-controls');
     container.innerHTML = '';
+    allSections.length = 0;
 
-    // Collect procedural-only items (no context and no history)
+    // Split procedural (no context/history) from substantive items
     const proceduralItems = [];
     const substantiveSections = [];
 
@@ -377,8 +448,13 @@
     substantiveSections.forEach(sec => {
       const label = document.createElement('div');
       label.className = 'section-label';
-      label.textContent = sec.name;
-      container.appendChild(label);
+      label.innerHTML = `<span class="section-arrow">▾</span>${sec.name}`;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'section-items';
+
+      allSections.push({ label, wrapper });
+      label.addEventListener('click', () => toggleSection(label, wrapper));
 
       sec.items.forEach(item => {
         const isNoHistory = !item.history || item.history.trim().toLowerCase().startsWith('no prior history');
@@ -405,9 +481,21 @@
               <div class="detail-body ${isNoHistory ? 'no-history' : ''}">${item.history || 'No prior history available yet.'}</div>
             </details>
           </div>`;
-        container.appendChild(card);
+        wrapper.appendChild(card);
       });
+
+      container.appendChild(label);
+      container.appendChild(wrapper);
     });
+
+    // Show controls bar if there are multiple sections
+    if (allSections.length > 1) {
+      controls.style.display = 'flex';
+      document.getElementById('btn-expand-all').onclick = () =>
+        allSections.forEach(s => toggleSection(s.label, s.wrapper, true));
+      document.getElementById('btn-collapse-all').onclick = () =>
+        allSections.forEach(s => toggleSection(s.label, s.wrapper, false));
+    }
   }
 
   function renderNotes(markdown) {
