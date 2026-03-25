@@ -66,13 +66,16 @@
 
     /* Section headers */
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #8899bb;
-      margin: 1.75rem 0 0.6rem;
-      padding-left: 0.25rem;
+      letter-spacing: 0.09em;
+      color: #1a3a5c;
+      background: #e8f0fe;
+      border-left: 4px solid #1a3a5c;
+      padding: 0.45rem 0.85rem;
+      margin: 2rem 0 0.65rem;
+      border-radius: 0 4px 4px 0;
     }
 
     .section-label:first-child { margin-top: 0; }
@@ -393,11 +396,11 @@
           ${voteHtml}
           <div class="item-dropdowns">
             ${item.context ? `
-            <details>
+            <details open>
               <summary>Context</summary>
               <div class="detail-body">${item.context}</div>
             </details>` : ''}
-            <details>
+            <details open>
               <summary>History</summary>
               <div class="detail-body ${isNoHistory ? 'no-history' : ''}">${item.history || 'No prior history available yet.'}</div>
             </details>
