@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CISD Board Meeting Monitor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1a3a5c;
+      color: white;
+      padding: 2rem 1.5rem;
+      border-bottom: 4px solid #e8a020;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .disclaimer {
+      background: #fff8e8;
+      border-left: 4px solid #e8a020;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.85rem;
+      color: #7a5a00;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #1a3a5c;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e8a020;
+    }
+
+    .meeting-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    .meeting-card:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+
+    .meeting-date {
+      flex: 0 0 auto;
+      text-align: center;
+      background: #1a3a5c;
+      color: white;
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      min-width: 80px;
+    }
+
+    .meeting-date .month {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+
+    .meeting-date .day {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .meeting-date .year {
+      font-size: 0.7rem;
+      opacity: 0.85;
+    }
+
+    .meeting-info { flex: 1; }
+
+    .meeting-info h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .meeting-type {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      margin-right: 0.5rem;
+    }
+
+    .type-regular { background: #e8f0fe; color: #1a3a8c; }
+    .type-special { background: #fce8e6; color: #8c1a1a; }
+
+    .meeting-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+
+    .badge-agenda { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4fa; }
+    .badge-notes  { border-color: #1a7a3c; color: #1a7a3c; background: #f0faf4; }
+
+    .arrow {
+      flex: 0 0 auto;
+      color: #9aaecc;
+      font-size: 1.4rem;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 3rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CISD Board Meeting Monitor</h1>
+  <p>Constituent summaries of Conroe ISD Board of Trustees meetings</p>
+</header>
+
+<div class="disclaimer">
+  Unofficial summaries generated from public records. Not affiliated with or endorsed by Conroe Independent School District.
+</div>
+
+<main>
+  <h2>Board Meetings</h2>
+  <div id="meetings-list">
+    <p id="loading">Loading meetings...</p>
+  </div>
+</main>
+
+<footer>
+  CISD Board Meeting Monitor &mdash; Unofficial constituent resource &mdash;
+  Data sourced from public CISD records and YouTube recordings
+</footer>
+
+<script>
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function formatDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return { month: MONTHS[m - 1], day: d, year: y };
+  }
+
+  fetch('data/index.json')
+    .then(r => r.json())
+    .then(payload => {
+      const container = document.getElementById('meetings-list');
+      container.innerHTML = '';
+      const meetings = payload.meetings || [];
+
+      if (!meetings.length) {
+        container.innerHTML = '<p style="color:#666;padding:1rem">No meetings published yet.</p>';
+        return;
+      }
+
+      meetings.forEach(m => {
+        const { month, day, year } = formatDate(m.meeting_date);
+        const typeClass = m.meeting_type === 'regular' ? 'type-regular' : 'type-special';
+
+        const badges = [];
+        if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
+        if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
+
+        const card = document.createElement('a');
+        card.className = 'meeting-card';
+        card.href = `meeting.html?id=${m.id}`;
+        card.innerHTML = `
+          <div class="meeting-date">
+            <div class="month">${month}</div>
+            <div class="day">${day}</div>
+            <div class="year">${year}</div>
+          </div>
+          <div class="meeting-info">
+            <h3>Board of Trustees &mdash; ${m.type_display}</h3>
+            <span class="meeting-type ${typeClass}">${m.meeting_type}</span>
+            <div class="meeting-badges">${badges.join('')}</div>
+          </div>
+          <div class="arrow">&#8250;</div>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(() => {
+      document.getElementById('loading').textContent = 'Could not load meetings data.';
+    });
+</script>
+
+</body>
+</html>

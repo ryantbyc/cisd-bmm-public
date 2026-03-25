@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Meeting — CISD Monitor</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1a3a5c;
+      color: white;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 4px solid #e8a020;
+    }
+
+    header a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.4rem; font-weight: 700; margin-top: 0.35rem; }
+    header .meta { font-size: 0.88rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    .disclaimer {
+      background: #fff8e8;
+      border-left: 4px solid #e8a020;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.82rem;
+      color: #7a5a00;
+    }
+
+    main { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem 3rem; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #dce3ef;
+    }
+
+    .tab-btn {
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s;
+    }
+
+    .tab-btn.active { color: #1a3a5c; border-bottom-color: #e8a020; }
+    .tab-btn:hover:not(.active) { color: #1a3a5c; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Section headers */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8899bb;
+      margin: 1.75rem 0 0.6rem;
+      padding-left: 0.25rem;
+    }
+
+    .section-label:first-child { margin-top: 0; }
+
+    /* Agenda items */
+    .agenda-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+    }
+
+    .item-header {
+      padding: 1rem 1.25rem;
+    }
+
+    .item-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #8899bb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+
+    .item-dropdowns {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid #eef0f5;
+    }
+
+    details {
+      flex: 1;
+      border-right: 1px solid #eef0f5;
+    }
+
+    details:last-child { border-right: none; }
+
+    details summary {
+      padding: 0.55rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1a3a5c;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      list-style: none;
+      user-select: none;
+      transition: background 0.1s;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::before {
+      content: "▸";
+      font-size: 0.7rem;
+      transition: transform 0.15s;
+      display: inline-block;
+    }
+
+    details[open] summary::before { transform: rotate(90deg); }
+    details summary:hover { background: #f5f7fb; }
+
+    .detail-body {
+      padding: 0.75rem 1rem 1rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #333;
+      border-top: 1px solid #eef0f5;
+      background: #fafbfd;
+    }
+
+    .detail-body.no-history { color: #999; font-style: italic; }
+
+    /* Meeting notes */
+    .notes-body {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      padding: 1.75rem 2rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .notes-body h1, .notes-body h2 {
+      color: #1a3a5c;
+      margin: 1.5rem 0 0.6rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid #dce3ef;
+    }
+
+    .notes-body h1 { font-size: 1.3rem; }
+    .notes-body h2 { font-size: 1.1rem; }
+    .notes-body h3 { font-size: 1rem; color: #2a4a7c; margin: 1.1rem 0 0.4rem; }
+    .notes-body h4 { font-size: 0.95rem; color: #3a5a8c; margin: 0.9rem 0 0.3rem; }
+
+    .notes-body p { margin-bottom: 0.75rem; }
+
+    .notes-body ul, .notes-body ol {
+      margin: 0.4rem 0 0.75rem 1.5rem;
+    }
+
+    .notes-body li { margin-bottom: 0.25rem; }
+
+    .notes-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+
+    .notes-body th {
+      background: #1a3a5c;
+      color: white;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+
+    .notes-body td {
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid #e8ecf4;
+    }
+
+    .notes-body tr:nth-child(even) td { background: #f7f9fd; }
+
+    .notes-body blockquote {
+      border-left: 4px solid #e8a020;
+      margin: 0.75rem 0;
+      padding: 0.5rem 1rem;
+      background: #fff8e8;
+      color: #7a5a00;
+      font-size: 0.88rem;
+    }
+
+    .notes-body strong { color: #1a1a2e; }
+    .notes-body hr { border: none; border-top: 1px solid #dce3ef; margin: 1.25rem 0; }
+
+    /* Procedural items */
+    .procedural-list {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .procedural-list p {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8899bb;
+      margin-bottom: 0.5rem;
+    }
+
+    .procedural-list ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .procedural-list li {
+      font-size: 0.82rem;
+      background: #f0f4fa;
+      color: #4a6a9c;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    #loading-msg { text-align: center; padding: 3rem; color: #666; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">&#8592; All Meetings</a>
+  <h1 id="page-title">Loading meeting...</h1>
+  <div class="meta" id="page-meta"></div>
+</header>
+
+<div class="disclaimer">
+  Unofficial summaries based on public agendas and auto-generated transcripts. Not affiliated with or endorsed by Conroe ISD.
+</div>
+
+<main>
+  <div id="loading-msg">Loading meeting data...</div>
+  <div id="content" style="display:none">
+
+    <div class="tabs" id="tabs"></div>
+
+    <div id="tab-agenda" class="tab-panel active">
+      <div id="procedural-section"></div>
+      <div id="agenda-items"></div>
+    </div>
+
+    <div id="tab-notes" class="tab-panel">
+      <div class="notes-body" id="notes-body"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  CISD Board Meeting Monitor &mdash; Unofficial constituent resource
+</footer>
+
+<script>
+  const MONTHS = ["January","February","March","April","May","June",
+                  "July","August","September","October","November","December"];
+
+  function formatFullDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return `${MONTHS[m-1]} ${d}, ${y}`;
+  }
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  function buildTabs(hasAgenda, hasNotes) {
+    const tabsEl = document.getElementById('tabs');
+    tabsEl.innerHTML = '';
+    const panels = [];
+
+    if (hasAgenda) {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn active';
+      btn.textContent = 'Agenda Breakdown';
+      btn.dataset.target = 'tab-agenda';
+      tabsEl.appendChild(btn);
+      panels.push('tab-agenda');
+    }
+
+    if (hasNotes) {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (hasAgenda ? '' : ' active');
+      btn.textContent = 'Meeting Notes';
+      btn.dataset.target = 'tab-notes';
+      tabsEl.appendChild(btn);
+      panels.push('tab-notes');
+    }
+
+    tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabsEl.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        panels.forEach(id => document.getElementById(id).classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+
+    if (!hasAgenda && hasNotes) {
+      document.getElementById('tab-notes').classList.add('active');
+      document.getElementById('tab-agenda').classList.remove('active');
+    }
+  }
+
+  function renderAgenda(sections) {
+    const container = document.getElementById('agenda-items');
+    const proceduralEl = document.getElementById('procedural-section');
+    container.innerHTML = '';
+
+    // Collect procedural-only items (no context and no history)
+    const proceduralItems = [];
+    const substantiveSections = [];
+
+    sections.forEach(sec => {
+      const proc = sec.items.filter(i => !i.context && !i.history);
+      const subs = sec.items.filter(i => i.context || i.history);
+      proc.forEach(i => proceduralItems.push(i));
+      if (subs.length) substantiveSections.push({ name: sec.name, items: subs });
+    });
+
+    if (proceduralItems.length) {
+      proceduralEl.innerHTML = `
+        <div class="procedural-list">
+          <p>Procedural Items</p>
+          <ul>${proceduralItems.map(i => `<li><strong>${i.id}</strong> ${i.title}</li>`).join('')}</ul>
+        </div>`;
+    }
+
+    substantiveSections.forEach(sec => {
+      const label = document.createElement('div');
+      label.className = 'section-label';
+      label.textContent = sec.name;
+      container.appendChild(label);
+
+      sec.items.forEach(item => {
+        const isNoHistory = !item.history || item.history.trim().toLowerCase().startsWith('no prior history');
+        const voteHtml = item.vote
+          ? `<div style="padding:0.4rem 1.25rem;font-size:0.82rem;color:#1a7a3c;font-weight:600;border-top:1px solid #eef0f5;background:#f0faf4">Vote: ${item.vote}</div>`
+          : '';
+
+        const card = document.createElement('div');
+        card.className = 'agenda-item';
+        card.innerHTML = `
+          <div class="item-header">
+            ${item.id ? `<div class="item-number">${item.id}</div>` : ''}
+            <div class="item-title">${item.title}</div>
+          </div>
+          ${voteHtml}
+          <div class="item-dropdowns">
+            ${item.context ? `
+            <details>
+              <summary>Context</summary>
+              <div class="detail-body">${item.context}</div>
+            </details>` : ''}
+            <details>
+              <summary>History</summary>
+              <div class="detail-body ${isNoHistory ? 'no-history' : ''}">${item.history || 'No prior history available yet.'}</div>
+            </details>
+          </div>`;
+        container.appendChild(card);
+      });
+    });
+  }
+
+  function renderNotes(markdown) {
+    const notesEl = document.getElementById('notes-body');
+    if (typeof marked !== 'undefined') {
+      notesEl.innerHTML = marked.parse(markdown);
+    } else {
+      notesEl.innerHTML = '<pre style="white-space:pre-wrap">' + markdown + '</pre>';
+    }
+  }
+
+  const meetingId = getParam('id');
+  if (!meetingId) {
+    document.getElementById('loading-msg').textContent = 'No meeting specified.';
+  } else {
+    fetch(`data/${meetingId}.json`)
+      .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
+      .then(data => {
+        document.getElementById('loading-msg').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+
+        const typeLabel = data.type === 'regular' ? 'Regular Meeting' : 'Special Meeting';
+        document.title = `${data.date_display} — CISD Monitor`;
+        document.getElementById('page-title').textContent =
+          `Board of Trustees — ${data.type_display}`;
+        document.getElementById('page-meta').textContent = data.date_display;
+
+        buildTabs(data.has_agenda, data.has_notes);
+
+        if (data.has_agenda && data.sections) {
+          renderAgenda(data.sections);
+        }
+
+        if (data.has_notes && data.meeting_notes_md) {
+          renderNotes(data.meeting_notes_md);
+        }
+      })
+      .catch(() => {
+        document.getElementById('loading-msg').textContent =
+          'Could not load meeting data. The meeting may not be published yet.';
+      });
+  }
+</script>
+
+</body>
+</html>
