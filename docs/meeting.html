@@ -226,6 +226,24 @@
 
     .section-controls span { margin-right: 0.25rem; }
 
+    .pdf-download {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--bg-ctrl);
+      color: var(--text-section);
+      border: 1px solid var(--border-ctrl);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.12s;
+    }
+
+    .pdf-download:hover { background: var(--bg-ctrl-hover); }
+
     .ctrl-btn {
       padding: 0.3rem 0.75rem;
       font-size: 0.8rem;
@@ -507,6 +525,9 @@
         <span>Sections:</span>
         <button class="ctrl-btn" id="btn-expand-all">Expand All</button>
         <button class="ctrl-btn" id="btn-collapse-all">Collapse All</button>
+        <a id="pdf-link" class="pdf-download" style="display:none" target="_blank" rel="noopener">
+          &#8595; Original Agenda PDF
+        </a>
       </div>
       <div id="agenda-items"></div>
     </div>
@@ -800,6 +821,15 @@
 
         if (data.has_notes && data.meeting_notes_md) {
           renderNotes(data.meeting_notes_md);
+        }
+
+        // Wire up PDF download link if available
+        if (data.pdf_filename) {
+          const link = document.getElementById('pdf-link');
+          link.href = `data/pdfs/${data.pdf_filename}`;
+          link.style.display = 'inline-flex';
+          // Also ensure the controls bar is visible even if only 1 section
+          document.getElementById('section-controls').style.display = 'flex';
         }
       })
       .catch(() => {
