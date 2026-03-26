@@ -134,24 +134,17 @@
       color: var(--ctrl-text);
       border: 1px solid var(--ctrl-border);
       border-radius: 5px;
-      padding: 0.28rem 0.55rem;
-      font-size: 0.78rem;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
       transition: background 0.12s;
       line-height: 1;
-    }
-
-    .hctrl-btn:hover { background: var(--ctrl-bg-hover); }
-
-    #font-label {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.7);
-      min-width: 1.8em;
+      min-width: 2.4rem;
       text-align: center;
     }
 
-    .theme-btn { font-size: 0.9rem; padding: 0.28rem 0.5rem; }
+    .hctrl-btn:hover { background: var(--ctrl-bg-hover); }
 
     /* ── Disclaimer ────────────────────────────────────────────── */
     .disclaimer {
@@ -268,9 +261,8 @@
     </div>
     <div class="page-controls">
       <button class="hctrl-btn" id="font-down" title="Decrease font size">A−</button>
-      <span id="font-label">17</span>
       <button class="hctrl-btn" id="font-up" title="Increase font size">A+</button>
-      <button class="hctrl-btn theme-btn" id="theme-toggle" title="Toggle dark mode">☾</button>
+      <button class="hctrl-btn" id="theme-toggle" title="Toggle dark mode">☾</button>
     </div>
   </div>
 </header>
@@ -287,8 +279,7 @@
 </main>
 
 <footer>
-  CISD Board Meeting Monitor &mdash; Unofficial constituent resource &mdash;
-  Data sourced from public CISD records and YouTube recordings
+  CISD Board Meeting Monitor &mdash; Unofficial constituent resource
 </footer>
 
 <script>
@@ -297,7 +288,6 @@
 
   function applyFont(size) {
     document.documentElement.style.fontSize = size + 'px';
-    document.getElementById('font-label').textContent = size;
   }
 
   function applyTheme(theme) {
