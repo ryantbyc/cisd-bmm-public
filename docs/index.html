@@ -1,46 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CISD Board Meeting Monitor</title>
+  <!-- Apply saved preferences before render to prevent flash -->
+  <script>
+    (function(){
+      var f = parseInt(localStorage.getItem('cisd-font-size')) || 17;
+      var t = localStorage.getItem('cisd-theme') || 'light';
+      document.documentElement.style.fontSize = f + 'px';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <style>
+    /* ── Design tokens ─────────────────────────────────────────── */
+    :root {
+      --bg-page:        #f4f6f9;
+      --bg-card:        #ffffff;
+      --bg-header:      #1a3a5c;
+      --bg-disclaimer:  #fff8e8;
+      --bg-date-badge:  #1a3a5c;
+      --bg-type-reg:    #e8f0fe;
+      --bg-type-spl:    #fce8e6;
+      --bg-badge-ag:    #f0f4fa;
+      --bg-badge-nt:    #f0faf4;
+      --text-primary:   #1a1a2e;
+      --text-secondary: #555;
+      --text-header:    #ffffff;
+      --text-disclaimer:#7a5a00;
+      --text-section:   #1a3a5c;
+      --text-type-reg:  #1a3a8c;
+      --text-type-spl:  #8c1a1a;
+      --text-badge-ag:  #1a3a5c;
+      --text-badge-nt:  #1a7a3c;
+      --text-arrow:     #9aaecc;
+      --text-footer:    #888;
+      --border-accent:  #e8a020;
+      --border-section: #e8a020;
+      --border-badge-ag:#1a3a5c;
+      --border-badge-nt:#1a7a3c;
+      --shadow-card:    0 1px 4px rgba(0,0,0,0.08);
+      --shadow-hover:   0 4px 14px rgba(0,0,0,0.12);
+      --ctrl-bg:        rgba(255,255,255,0.15);
+      --ctrl-bg-hover:  rgba(255,255,255,0.28);
+      --ctrl-border:    rgba(255,255,255,0.3);
+      --ctrl-text:      #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg-page:        #0f1117;
+      --bg-card:        #1a1d27;
+      --bg-header:      #0a1929;
+      --bg-disclaimer:  #1e1a08;
+      --bg-date-badge:  #1e3a60;
+      --bg-type-reg:    #142040;
+      --bg-type-spl:    #301414;
+      --bg-badge-ag:    #141e30;
+      --bg-badge-nt:    #0f2018;
+      --text-primary:   #e2e8f4;
+      --text-secondary: #8a9ec0;
+      --text-header:    #ffffff;
+      --text-disclaimer:#c8a840;
+      --text-section:   #88aadd;
+      --text-type-reg:  #6a9ade;
+      --text-type-spl:  #de6a6a;
+      --text-badge-ag:  #6a9ade;
+      --text-badge-nt:  #4acc80;
+      --text-arrow:     #4a6a99;
+      --text-footer:    #5a6a88;
+      --border-badge-ag:#2a4a7c;
+      --border-badge-nt:#1a5a3c;
+      --shadow-card:    0 1px 4px rgba(0,0,0,0.4);
+      --shadow-hover:   0 4px 14px rgba(0,0,0,0.6);
+      --ctrl-bg:        rgba(255,255,255,0.1);
+      --ctrl-bg-hover:  rgba(255,255,255,0.2);
+      --ctrl-border:    rgba(255,255,255,0.2);
+    }
+
+    /* ── Base ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; /* overridden by JS */ }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f4f6f9;
-      color: #1a1a2e;
+      background: var(--bg-page);
+      color: var(--text-primary);
       min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
     }
 
+    /* ── Header ────────────────────────────────────────────────── */
     header {
-      background: #1a3a5c;
-      color: white;
-      padding: 2rem 1.5rem;
-      border-bottom: 4px solid #e8a020;
+      background: var(--bg-header);
+      color: var(--text-header);
+      padding: 1.4rem 1.5rem 1.2rem;
+      border-bottom: 4px solid var(--border-accent);
     }
 
-    header h1 {
+    .header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header-brand h1 {
       font-size: 1.75rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
-    header p {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      opacity: 0.85;
+    .header-brand p {
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
 
+    /* ── Page controls ─────────────────────────────────────────── */
+    .page-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+    }
+
+    .hctrl-btn {
+      background: var(--ctrl-bg);
+      color: var(--ctrl-text);
+      border: 1px solid var(--ctrl-border);
+      border-radius: 5px;
+      padding: 0.28rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.12s;
+      line-height: 1;
+    }
+
+    .hctrl-btn:hover { background: var(--ctrl-bg-hover); }
+
+    #font-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+      min-width: 1.8em;
+      text-align: center;
+    }
+
+    .theme-btn { font-size: 0.9rem; padding: 0.28rem 0.5rem; }
+
+    /* ── Disclaimer ────────────────────────────────────────────── */
     .disclaimer {
-      background: #fff8e8;
-      border-left: 4px solid #e8a020;
-      padding: 0.75rem 1.25rem;
-      font-size: 0.85rem;
-      color: #7a5a00;
+      background: var(--bg-disclaimer);
+      border-left: 4px solid var(--border-accent);
+      padding: 0.6rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-disclaimer);
     }
 
+    /* ── Main content ──────────────────────────────────────────── */
     main {
       max-width: 900px;
       margin: 2rem auto;
@@ -48,17 +170,18 @@
     }
 
     h2 {
-      font-size: 1.2rem;
-      color: #1a3a5c;
+      font-size: 1.15rem;
+      color: var(--text-section);
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e8a020;
+      border-bottom: 2px solid var(--border-section);
     }
 
+    /* ── Meeting cards ─────────────────────────────────────────── */
     .meeting-card {
-      background: white;
+      background: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-card);
       padding: 1.25rem 1.5rem;
       margin-bottom: 1rem;
       display: flex;
@@ -66,53 +189,40 @@
       gap: 1.5rem;
       text-decoration: none;
       color: inherit;
-      transition: box-shadow 0.15s, transform 0.15s;
+      transition: box-shadow 0.15s, transform 0.15s, background 0.2s;
     }
 
     .meeting-card:hover {
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-1px);
     }
 
     .meeting-date {
       flex: 0 0 auto;
       text-align: center;
-      background: #1a3a5c;
+      background: var(--bg-date-badge);
       color: white;
       border-radius: 6px;
       padding: 0.6rem 1rem;
       min-width: 80px;
     }
 
-    .meeting-date .month {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.85;
-    }
-
-    .meeting-date .day {
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .meeting-date .year {
-      font-size: 0.7rem;
-      opacity: 0.85;
-    }
+    .meeting-date .month { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; }
+    .meeting-date .day   { font-size: 1.75rem; font-weight: 700; line-height: 1.1; }
+    .meeting-date .year  { font-size: 0.68rem; opacity: 0.85; }
 
     .meeting-info { flex: 1; }
 
     .meeting-info h3 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.35rem;
+      color: var(--text-primary);
     }
 
     .meeting-type {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -121,51 +231,48 @@
       margin-right: 0.5rem;
     }
 
-    .type-regular { background: #e8f0fe; color: #1a3a8c; }
-    .type-special { background: #fce8e6; color: #8c1a1a; }
+    .type-regular { background: var(--bg-type-reg); color: var(--text-type-reg); }
+    .type-special { background: var(--bg-type-spl); color: var(--text-type-spl); }
 
-    .meeting-badges {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-top: 0.5rem;
-    }
+    .meeting-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
 
     .badge {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       padding: 0.2rem 0.6rem;
       border-radius: 4px;
       border: 1px solid;
     }
 
-    .badge-agenda { border-color: #1a3a5c; color: #1a3a5c; background: #f0f4fa; }
-    .badge-notes  { border-color: #1a7a3c; color: #1a7a3c; background: #f0faf4; }
+    .badge-agenda { border-color: var(--border-badge-ag); color: var(--text-badge-ag); background: var(--bg-badge-ag); }
+    .badge-notes  { border-color: var(--border-badge-nt); color: var(--text-badge-nt); background: var(--bg-badge-nt); }
 
-    .arrow {
-      flex: 0 0 auto;
-      color: #9aaecc;
-      font-size: 1.4rem;
-    }
+    .arrow { flex: 0 0 auto; color: var(--text-arrow); font-size: 1.4rem; }
 
-    #loading {
-      text-align: center;
-      padding: 3rem;
-      color: #666;
-    }
+    #loading { text-align: center; padding: 3rem; color: var(--text-secondary); }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      color: #888;
-      font-size: 0.82rem;
+      color: var(--text-footer);
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>CISD Board Meeting Monitor</h1>
-  <p>Constituent summaries of Conroe ISD Board of Trustees meetings</p>
+  <div class="header-row">
+    <div class="header-brand">
+      <h1>CISD Board Meeting Monitor</h1>
+      <p>Constituent summaries of Conroe ISD Board of Trustees meetings</p>
+    </div>
+    <div class="page-controls">
+      <button class="hctrl-btn" id="font-down" title="Decrease font size">A−</button>
+      <span id="font-label">17</span>
+      <button class="hctrl-btn" id="font-up" title="Increase font size">A+</button>
+      <button class="hctrl-btn theme-btn" id="theme-toggle" title="Toggle dark mode">☾</button>
+    </div>
+  </div>
 </header>
 
 <div class="disclaimer">
@@ -186,6 +293,41 @@
 
 <script>
   const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const FONT_MIN = 13, FONT_MAX = 22, FONT_DEFAULT = 17;
+
+  function applyFont(size) {
+    document.documentElement.style.fontSize = size + 'px';
+    document.getElementById('font-label').textContent = size;
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀' : '☾';
+  }
+
+  // Init controls from localStorage
+  applyFont(parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT);
+  applyTheme(localStorage.getItem('cisd-theme') || 'light');
+
+  document.getElementById('font-up').addEventListener('click', () => {
+    const next = Math.min((parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT) + 1, FONT_MAX);
+    localStorage.setItem('cisd-font-size', next);
+    applyFont(next);
+  });
+
+  document.getElementById('font-down').addEventListener('click', () => {
+    const next = Math.max((parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT) - 1, FONT_MIN);
+    localStorage.setItem('cisd-font-size', next);
+    applyFont(next);
+  });
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('cisd-theme', next);
+    applyTheme(next);
+  });
+
+  // ── Meeting list ─────────────────────────────────────────────
 
   function formatDate(dateStr) {
     const [y, m, d] = dateStr.split('-').map(Number);
@@ -200,14 +342,13 @@
       const meetings = payload.meetings || [];
 
       if (!meetings.length) {
-        container.innerHTML = '<p style="color:#666;padding:1rem">No meetings published yet.</p>';
+        container.innerHTML = '<p style="padding:1rem">No meetings published yet.</p>';
         return;
       }
 
       meetings.forEach(m => {
         const { month, day, year } = formatDate(m.meeting_date);
         const typeClass = m.meeting_type === 'regular' ? 'type-regular' : 'type-special';
-
         const badges = [];
         if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
         if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
@@ -226,8 +367,7 @@
             <span class="meeting-type ${typeClass}">${m.meeting_type}</span>
             <div class="meeting-badges">${badges.join('')}</div>
           </div>
-          <div class="arrow">&#8250;</div>
-        `;
+          <div class="arrow">&#8250;</div>`;
         container.appendChild(card);
       });
     })

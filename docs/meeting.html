@@ -1,48 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Board Meeting — CISD Monitor</title>
+  <!-- Apply saved preferences before render to prevent flash -->
+  <script>
+    (function(){
+      var f = parseInt(localStorage.getItem('cisd-font-size')) || 17;
+      var t = localStorage.getItem('cisd-theme') || 'light';
+      document.documentElement.style.fontSize = f + 'px';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
+    /* ── Design tokens ─────────────────────────────────────────── */
+    :root {
+      --bg-page:          #f4f6f9;
+      --bg-card:          #ffffff;
+      --bg-header:        #1a3a5c;
+      --bg-disclaimer:    #fff8e8;
+      --bg-section-label: #e8f0fe;
+      --bg-section-hover: #d4e4fc;
+      --bg-section-coll:  #f0f4fa;
+      --bg-ctrl:          #f0f4fa;
+      --bg-ctrl-hover:    #dce8f8;
+      --bg-detail:        #fafbfd;
+      --bg-summary-hover: #f5f7fb;
+      --bg-vote:          #f0faf4;
+      --bg-proc-item:     #f0f4fa;
+      --bg-table-th:      #1a3a5c;
+      --bg-table-stripe:  #f7f9fd;
+      --bg-blockquote:    #fff8e8;
+      --text-primary:     #1a1a2e;
+      --text-secondary:   #666;
+      --text-header:      #ffffff;
+      --text-disclaimer:  #7a5a00;
+      --text-section:     #1a3a5c;
+      --text-section-sub: #2a4a7c;
+      --text-section-3:   #3a5a8c;
+      --text-section-coll:#4a6a9c;
+      --text-item-num:    #8899bb;
+      --text-detail:      #333;
+      --text-no-history:  #999;
+      --text-vote:        #1a7a3c;
+      --text-blockquote:  #7a5a00;
+      --text-footer:      #888;
+      --border-accent:    #e8a020;
+      --border-tabs:      #dce3ef;
+      --border-ctrl:      #c8d8f0;
+      --border-subtle:    #eef0f5;
+      --border-table:     #e8ecf4;
+      --border-section-coll: #9ab0d0;
+      --shadow-card:      0 1px 3px rgba(0,0,0,0.07);
+      --ctrl-bg:          rgba(255,255,255,0.15);
+      --ctrl-bg-hover:    rgba(255,255,255,0.28);
+      --ctrl-border:      rgba(255,255,255,0.3);
+      --ctrl-text:        #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg-page:          #0f1117;
+      --bg-card:          #1a1d27;
+      --bg-header:        #0a1929;
+      --bg-disclaimer:    #1e1a08;
+      --bg-section-label: #142040;
+      --bg-section-hover: #1a2a50;
+      --bg-section-coll:  #141e30;
+      --bg-ctrl:          #1a2440;
+      --bg-ctrl-hover:    #223060;
+      --bg-detail:        #141822;
+      --bg-summary-hover: #1c2130;
+      --bg-vote:          #0f2018;
+      --bg-proc-item:     #141e30;
+      --bg-table-th:      #0e2040;
+      --bg-table-stripe:  #161a26;
+      --bg-blockquote:    #1e1a08;
+      --text-primary:     #e2e8f4;
+      --text-secondary:   #8a9ec0;
+      --text-header:      #ffffff;
+      --text-disclaimer:  #c8a840;
+      --text-section:     #88aadd;
+      --text-section-sub: #6a9ade;
+      --text-section-3:   #7a9aca;
+      --text-section-coll:#4a6a99;
+      --text-item-num:    #4a6a99;
+      --text-detail:      #ccd4e8;
+      --text-no-history:  #556070;
+      --text-vote:        #4acc80;
+      --text-blockquote:  #c8a840;
+      --text-footer:      #5a6a88;
+      --border-tabs:      #2a3a52;
+      --border-ctrl:      #2a4a7c;
+      --border-subtle:    #252a3a;
+      --border-table:     #252a3a;
+      --border-section-coll: #2a3a60;
+      --shadow-card:      0 1px 4px rgba(0,0,0,0.4);
+      --ctrl-bg:          rgba(255,255,255,0.1);
+      --ctrl-bg-hover:    rgba(255,255,255,0.2);
+      --ctrl-border:      rgba(255,255,255,0.2);
+    }
+
+    /* ── Base ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; /* overridden by JS */ }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f4f6f9;
-      color: #1a1a2e;
+      background: var(--bg-page);
+      color: var(--text-primary);
       min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
     }
 
+    /* ── Header ────────────────────────────────────────────────── */
     header {
-      background: #1a3a5c;
-      color: white;
+      background: var(--bg-header);
+      color: var(--text-header);
       padding: 1.25rem 1.5rem;
-      border-bottom: 4px solid #e8a020;
+      border-bottom: 4px solid var(--border-accent);
     }
 
-    header a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; }
-    header a:hover { color: white; }
-    header h1 { font-size: 1.4rem; font-weight: 700; margin-top: 0.35rem; }
-    header .meta { font-size: 0.88rem; opacity: 0.8; margin-top: 0.25rem; }
+    .header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
+    .header-brand a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; }
+    .header-brand a:hover { color: white; }
+    .header-brand h1 { font-size: 1.4rem; font-weight: 700; margin-top: 0.35rem; }
+    .header-brand .meta { font-size: 0.88rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    /* ── Page controls ─────────────────────────────────────────── */
+    .page-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+    }
+
+    .hctrl-btn {
+      background: var(--ctrl-bg);
+      color: var(--ctrl-text);
+      border: 1px solid var(--ctrl-border);
+      border-radius: 5px;
+      padding: 0.28rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.12s;
+      line-height: 1;
+    }
+
+    .hctrl-btn:hover { background: var(--ctrl-bg-hover); }
+
+    #font-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+      min-width: 1.8em;
+      text-align: center;
+    }
+
+    .theme-btn { font-size: 0.9rem; padding: 0.28rem 0.5rem; }
+
+    /* ── Disclaimer ────────────────────────────────────────────── */
     .disclaimer {
-      background: #fff8e8;
-      border-left: 4px solid #e8a020;
+      background: var(--bg-disclaimer);
+      border-left: 4px solid var(--border-accent);
       padding: 0.65rem 1.25rem;
       font-size: 0.82rem;
-      color: #7a5a00;
+      color: var(--text-disclaimer);
     }
 
+    /* ── Main ──────────────────────────────────────────────────── */
     main { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem 3rem; }
 
-    /* Tabs */
+    /* ── Tabs ──────────────────────────────────────────────────── */
     .tabs {
       display: flex;
       gap: 0;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #dce3ef;
+      border-bottom: 2px solid var(--border-tabs);
     }
 
     .tab-btn {
@@ -52,30 +197,30 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: #666;
+      color: var(--text-secondary);
       border-bottom: 3px solid transparent;
       margin-bottom: -2px;
       transition: color 0.15s;
     }
 
-    .tab-btn.active { color: #1a3a5c; border-bottom-color: #e8a020; }
-    .tab-btn:hover:not(.active) { color: #1a3a5c; }
+    .tab-btn.active { color: var(--text-section); border-bottom-color: var(--border-accent); }
+    .tab-btn:hover:not(.active) { color: var(--text-section); }
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* Section controls bar */
+    /* ── Section controls bar ──────────────────────────────────── */
     .section-controls {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       margin-bottom: 1rem;
       padding: 0.5rem 0.75rem;
-      background: white;
+      background: var(--bg-card);
       border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      box-shadow: var(--shadow-card);
       font-size: 0.82rem;
-      color: #666;
+      color: var(--text-secondary);
     }
 
     .section-controls span { margin-right: 0.25rem; }
@@ -84,25 +229,25 @@
       padding: 0.3rem 0.75rem;
       font-size: 0.8rem;
       font-weight: 600;
-      background: #f0f4fa;
-      color: #1a3a5c;
-      border: 1px solid #c8d8f0;
+      background: var(--bg-ctrl);
+      color: var(--text-section);
+      border: 1px solid var(--border-ctrl);
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.12s;
     }
 
-    .ctrl-btn:hover { background: #dce8f8; }
+    .ctrl-btn:hover { background: var(--bg-ctrl-hover); }
 
-    /* Section headers */
+    /* ── Section headers ───────────────────────────────────────── */
     .section-label {
       font-size: 0.8rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.09em;
-      color: #1a3a5c;
-      background: #e8f0fe;
-      border-left: 4px solid #1a3a5c;
+      color: var(--text-section);
+      background: var(--bg-section-label);
+      border-left: 4px solid var(--text-section);
       padding: 0.45rem 0.85rem;
       margin: 2rem 0 0;
       border-radius: 0 4px 4px 0;
@@ -115,8 +260,12 @@
     }
 
     .section-label:first-child { margin-top: 0; }
-    .section-label:hover { background: #d4e4fc; }
-    .section-label.collapsed { background: #f0f4fa; color: #4a6a9c; border-left-color: #9ab0d0; }
+    .section-label:hover { background: var(--bg-section-hover); }
+    .section-label.collapsed {
+      background: var(--bg-section-coll);
+      color: var(--text-section-coll);
+      border-left-color: var(--border-section-coll);
+    }
 
     .section-arrow {
       font-size: 0.65rem;
@@ -130,23 +279,21 @@
     .section-items { margin-bottom: 0.5rem; padding-top: 0.65rem; }
     .section-items.collapsed { display: none; }
 
-    /* Agenda items */
+    /* ── Agenda items ──────────────────────────────────────────── */
     .agenda-item {
-      background: white;
+      background: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      box-shadow: var(--shadow-card);
       margin-bottom: 0.6rem;
       overflow: hidden;
     }
 
-    .item-header {
-      padding: 1rem 1.25rem;
-    }
+    .item-header { padding: 1rem 1.25rem; }
 
     .item-number {
       font-size: 0.72rem;
       font-weight: 700;
-      color: #8899bb;
+      color: var(--text-item-num);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 0.25rem;
@@ -155,19 +302,19 @@
     .item-title {
       font-size: 0.98rem;
       font-weight: 600;
-      color: #1a1a2e;
+      color: var(--text-primary);
       line-height: 1.4;
     }
 
     .item-dropdowns {
       display: flex;
       gap: 0;
-      border-top: 1px solid #eef0f5;
+      border-top: 1px solid var(--border-subtle);
     }
 
     details {
       flex: 1;
-      border-right: 1px solid #eef0f5;
+      border-right: 1px solid var(--border-subtle);
     }
 
     details:last-child { border-right: none; }
@@ -176,7 +323,7 @@
       padding: 0.55rem 1rem;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #1a3a5c;
+      color: var(--text-section);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -196,24 +343,33 @@
     }
 
     details[open] summary::before { transform: rotate(90deg); }
-    details summary:hover { background: #f5f7fb; }
+    details summary:hover { background: var(--bg-summary-hover); }
 
     .detail-body {
       padding: 0.75rem 1rem 1rem;
       font-size: 0.88rem;
       line-height: 1.65;
-      color: #333;
-      border-top: 1px solid #eef0f5;
-      background: #fafbfd;
+      color: var(--text-detail);
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-detail);
     }
 
-    .detail-body.no-history { color: #999; font-style: italic; }
+    .detail-body.no-history { color: var(--text-no-history); font-style: italic; }
 
-    /* Meeting notes */
+    .vote-row {
+      padding: 0.4rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-vote);
+      font-weight: 600;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-vote);
+    }
+
+    /* ── Meeting notes ─────────────────────────────────────────── */
     .notes-body {
-      background: white;
+      background: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      box-shadow: var(--shadow-card);
       padding: 1.75rem 2rem;
       font-size: 0.92rem;
       line-height: 1.7;
@@ -221,13 +377,14 @@
 
     .notes-body h1 {
       font-size: 1.3rem;
-      color: #1a3a5c;
+      color: var(--text-section);
       margin: 1.5rem 0 0.6rem;
       padding-bottom: 0.35rem;
-      border-bottom: 1px solid #dce3ef;
+      border-bottom: 1px solid var(--border-tabs);
     }
-    .notes-body h3 { font-size: 1rem; color: #2a4a7c; margin: 1.1rem 0 0.4rem; }
-    .notes-body h4 { font-size: 0.95rem; color: #3a5a8c; margin: 0.9rem 0 0.3rem; }
+
+    .notes-body h3 { font-size: 1rem; color: var(--text-section-sub); margin: 1.1rem 0 0.4rem; }
+    .notes-body h4 { font-size: 0.95rem; color: var(--text-section-3); margin: 0.9rem 0 0.3rem; }
 
     .notes-body p { margin-bottom: 0.75rem; }
 
@@ -245,7 +402,7 @@
     }
 
     .notes-body th {
-      background: #1a3a5c;
+      background: var(--bg-table-th);
       color: white;
       padding: 0.5rem 0.75rem;
       text-align: left;
@@ -253,28 +410,28 @@
 
     .notes-body td {
       padding: 0.45rem 0.75rem;
-      border-bottom: 1px solid #e8ecf4;
+      border-bottom: 1px solid var(--border-table);
     }
 
-    .notes-body tr:nth-child(even) td { background: #f7f9fd; }
+    .notes-body tr:nth-child(even) td { background: var(--bg-table-stripe); }
 
     .notes-body blockquote {
-      border-left: 4px solid #e8a020;
+      border-left: 4px solid var(--border-accent);
       margin: 0.75rem 0;
       padding: 0.5rem 1rem;
-      background: #fff8e8;
-      color: #7a5a00;
+      background: var(--bg-blockquote);
+      color: var(--text-blockquote);
       font-size: 0.88rem;
     }
 
-    .notes-body strong { color: #1a1a2e; }
-    .notes-body hr { border: none; border-top: 1px solid #dce3ef; margin: 1.25rem 0; }
+    .notes-body strong { color: var(--text-primary); }
+    .notes-body hr { border: none; border-top: 1px solid var(--border-tabs); margin: 1.25rem 0; }
 
-    /* Procedural items */
+    /* ── Procedural items ──────────────────────────────────────── */
     .procedural-list {
-      background: white;
+      background: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      box-shadow: var(--shadow-card);
       padding: 1rem 1.25rem;
       margin-bottom: 1.5rem;
     }
@@ -284,7 +441,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #8899bb;
+      color: var(--text-item-num);
       margin-bottom: 0.5rem;
     }
 
@@ -297,18 +454,18 @@
 
     .procedural-list li {
       font-size: 0.82rem;
-      background: #f0f4fa;
-      color: #4a6a9c;
+      background: var(--bg-proc-item);
+      color: var(--text-section-coll);
       padding: 0.2rem 0.6rem;
       border-radius: 4px;
     }
 
-    #loading-msg { text-align: center; padding: 3rem; color: #666; }
+    #loading-msg { text-align: center; padding: 3rem; color: var(--text-secondary); }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      color: #888;
+      color: var(--text-footer);
       font-size: 0.82rem;
     }
   </style>
@@ -316,9 +473,19 @@
 <body>
 
 <header>
-  <a href="index.html">&#8592; All Meetings</a>
-  <h1 id="page-title">Loading meeting...</h1>
-  <div class="meta" id="page-meta"></div>
+  <div class="header-row">
+    <div class="header-brand">
+      <a href="index.html">&#8592; All Meetings</a>
+      <h1 id="page-title">Loading meeting...</h1>
+      <div class="meta" id="page-meta"></div>
+    </div>
+    <div class="page-controls">
+      <button class="hctrl-btn" id="font-down" title="Decrease font size">A−</button>
+      <span id="font-label">17</span>
+      <button class="hctrl-btn" id="font-up" title="Increase font size">A+</button>
+      <button class="hctrl-btn theme-btn" id="theme-toggle" title="Toggle dark mode">☾</button>
+    </div>
+  </div>
 </header>
 
 <div class="disclaimer">
@@ -360,11 +527,41 @@
 <script>
   const MONTHS = ["January","February","March","April","May","June",
                   "July","August","September","October","November","December"];
+  const FONT_MIN = 13, FONT_MAX = 22, FONT_DEFAULT = 17;
 
-  function formatFullDate(dateStr) {
-    const [y, m, d] = dateStr.split('-').map(Number);
-    return `${MONTHS[m-1]} ${d}, ${y}`;
+  function applyFont(size) {
+    document.documentElement.style.fontSize = size + 'px';
+    document.getElementById('font-label').textContent = size;
   }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀' : '☾';
+  }
+
+  // Init controls from localStorage
+  applyFont(parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT);
+  applyTheme(localStorage.getItem('cisd-theme') || 'light');
+
+  document.getElementById('font-up').addEventListener('click', () => {
+    const next = Math.min((parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT) + 1, FONT_MAX);
+    localStorage.setItem('cisd-font-size', next);
+    applyFont(next);
+  });
+
+  document.getElementById('font-down').addEventListener('click', () => {
+    const next = Math.max((parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT) - 1, FONT_MIN);
+    localStorage.setItem('cisd-font-size', next);
+    applyFont(next);
+  });
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('cisd-theme', next);
+    applyTheme(next);
+  });
+
+  // ── Meeting content ───────────────────────────────────────────
 
   function getParam(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -462,7 +659,7 @@
       sec.items.forEach(item => {
         const isNoHistory = !item.history || item.history.trim().toLowerCase().startsWith('no prior history');
         const voteHtml = item.vote
-          ? `<div style="padding:0.4rem 1.25rem;font-size:0.82rem;color:#1a7a3c;font-weight:600;border-top:1px solid #eef0f5;background:#f0faf4">Vote: ${item.vote}</div>`
+          ? `<div class="vote-row">Vote: ${item.vote}</div>`
           : '';
 
         const card = document.createElement('div');
@@ -588,7 +785,6 @@
         document.getElementById('loading-msg').style.display = 'none';
         document.getElementById('content').style.display = 'block';
 
-        const typeLabel = data.type === 'regular' ? 'Regular Meeting' : 'Special Meeting';
         document.title = `${data.date_display} — CISD Monitor`;
         document.getElementById('page-title').textContent =
           `Board of Trustees — ${data.type_display}`;
