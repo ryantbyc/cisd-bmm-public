@@ -249,6 +249,45 @@
 
     .arrow { flex: 0 0 auto; color: var(--text-arrow); font-size: 1.4rem; }
 
+    /* ── Search ────────────────────────────────────────────────── */
+    .search-bar {
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.5rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-section);
+      border-radius: 6px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--bg-header);
+      box-shadow: 0 0 0 3px rgba(26,58,92,0.12);
+    }
+
+    .search-bar .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .search-count {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
     #loading { text-align: center; padding: 3rem; color: var(--text-secondary); }
 
     footer {
@@ -284,6 +323,11 @@
 
 <main>
   <h2>Board Meetings</h2>
+  <div class="search-bar">
+    <span class="search-icon">&#128269;</span>
+    <input type="search" id="search-input" placeholder="Search meetings, topics, agenda items…" autocomplete="off">
+  </div>
+  <div id="search-count" class="search-count" style="display:none"></div>
   <div id="meetings-list">
     <p id="loading">Loading meetings...</p>
   </div>
@@ -293,6 +337,7 @@
   CISD Board Meeting Monitor &mdash; Unofficial constituent resource
 </footer>
 
+<script src="fuse.min.js"></script>
 <script>
   const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const FONT_MIN = 13, FONT_MAX = 22, FONT_DEFAULT = 17;
@@ -306,7 +351,6 @@
     document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀' : '☾';
   }
 
-  // Init controls from localStorage
   applyFont(parseInt(localStorage.getItem('cisd-font-size')) || FONT_DEFAULT);
   applyTheme(localStorage.getItem('cisd-theme') || 'light');
 
@@ -328,53 +372,103 @@
     applyTheme(next);
   });
 
-  // ── Meeting list ─────────────────────────────────────────────
+  // ── Meeting list + search ─────────────────────────────────────
 
   function formatDate(dateStr) {
     const [y, m, d] = dateStr.split('-').map(Number);
     return { month: MONTHS[m - 1], day: d, year: y };
   }
 
-  fetch('data/index.json')
-    .then(r => r.json())
-    .then(payload => {
-      const container = document.getElementById('meetings-list');
-      container.innerHTML = '';
-      const meetings = payload.meetings || [];
+  function buildCard(m) {
+    const { month, day, year } = formatDate(m.meeting_date);
+    const typeClass = m.meeting_type === 'regular' ? 'type-regular' : 'type-special';
+    const badges = [];
+    if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
+    if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
+    const card = document.createElement('a');
+    card.className = 'meeting-card';
+    card.href = `meeting.html?id=${encodeURIComponent(m.id)}`;
+    card.innerHTML = `
+      <div class="meeting-date">
+        <div class="month">${month}</div>
+        <div class="day">${day}</div>
+        <div class="year">${year}</div>
+      </div>
+      <div class="meeting-info">
+        <h3>Board of Trustees &mdash; ${m.type_display}</h3>
+        <span class="meeting-type ${typeClass}">${m.meeting_type}</span>
+        <div class="meeting-badges">${badges.join('')}</div>
+      </div>
+      <div class="arrow">&#8250;</div>`;
+    return card;
+  }
 
-      if (!meetings.length) {
-        container.innerHTML = '<p style="padding:1rem">No meetings published yet.</p>';
-        return;
-      }
+  let allMeetings = [];
+  let fuse = null;
+  const container  = document.getElementById('meetings-list');
+  const countEl    = document.getElementById('search-count');
+  const searchInput = document.getElementById('search-input');
 
-      meetings.forEach(m => {
-        const { month, day, year } = formatDate(m.meeting_date);
-        const typeClass = m.meeting_type === 'regular' ? 'type-regular' : 'type-special';
-        const badges = [];
-        if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
-        if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
+  function renderMeetings(meetings) {
+    container.innerHTML = '';
+    if (!meetings.length) {
+      container.innerHTML = '<p style="padding:1rem;color:var(--text-secondary)">No matching meetings found.</p>';
+      return;
+    }
+    meetings.forEach(m => container.appendChild(buildCard(m)));
+  }
 
-        const card = document.createElement('a');
-        card.className = 'meeting-card';
-        card.href = `meeting.html?id=${m.id}`;
-        card.innerHTML = `
-          <div class="meeting-date">
-            <div class="month">${month}</div>
-            <div class="day">${day}</div>
-            <div class="year">${year}</div>
-          </div>
-          <div class="meeting-info">
-            <h3>Board of Trustees &mdash; ${m.type_display}</h3>
-            <span class="meeting-type ${typeClass}">${m.meeting_type}</span>
-            <div class="meeting-badges">${badges.join('')}</div>
-          </div>
-          <div class="arrow">&#8250;</div>`;
-        container.appendChild(card);
+  function onSearch() {
+    const q = searchInput.value.trim();
+    if (!q) {
+      countEl.style.display = 'none';
+      renderMeetings(allMeetings);
+      return;
+    }
+    const results = fuse ? fuse.search(q).map(r => {
+      // Map search result back to index metadata by id
+      return allMeetings.find(m => m.id === r.item.id);
+    }).filter(Boolean) : [];
+    countEl.textContent = `${results.length} meeting${results.length !== 1 ? 's' : ''} found`;
+    countEl.style.display = 'block';
+    renderMeetings(results);
+  }
+
+  // Load index + search index in parallel
+  Promise.all([
+    fetch('data/index.json').then(r => r.json()),
+    fetch('data/search_index.json').then(r => r.json()).catch(() => []),
+  ]).then(([index, searchDocs]) => {
+    allMeetings = index.meetings || [];
+    document.getElementById('loading').remove();
+
+    if (!allMeetings.length) {
+      container.innerHTML = '<p style="padding:1rem">No meetings published yet.</p>';
+      return;
+    }
+
+    renderMeetings(allMeetings);
+
+    if (searchDocs.length) {
+      fuse = new Fuse(searchDocs, {
+        keys: [
+          { name: 'date_display',  weight: 0.3 },
+          { name: 'agenda_text',   weight: 0.5 },
+          { name: 'notes_text',    weight: 0.4 },
+          { name: 'type_display',  weight: 0.1 },
+        ],
+        threshold: 0.35,
+        ignoreLocation: true,
+        minMatchCharLength: 3,
       });
-    })
-    .catch(() => {
-      document.getElementById('loading').textContent = 'Could not load meetings data.';
-    });
+      searchInput.addEventListener('input', onSearch);
+    } else {
+      searchInput.placeholder = 'Search unavailable — run site-publisher to generate index';
+      searchInput.disabled = true;
+    }
+  }).catch(() => {
+    document.getElementById('loading').textContent = 'Could not load meetings data.';
+  });
 </script>
 
 </body>
