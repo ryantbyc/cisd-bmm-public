@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-29T02:23:42.329903Z",
+  "last_updated": "2026-03-29T13:02:32.671551Z",
   "meeting_count": 18,
   "meetings": [
     {
@@ -135,11 +135,11 @@
       "pdf_filename": "agenda_2025-09-16_regular.pdf"
     },
     {
-      "id": "2025-09-10_audit_and_investment_committee",
+      "id": "2025-09-10_audit_committee",
       "meeting_date": "2025-09-10",
-      "meeting_type": "audit_and_investment_committee",
+      "meeting_type": "audit_committee",
       "date_display": "September 10, 2025",
-      "type_display": "Audit and Investment Committee Meeting",
+      "type_display": "Audit Committee Meeting",
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
