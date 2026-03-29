@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-27T20:03:28.729618Z",
-  "meeting_count": 1,
+  "last_updated": "2026-03-29T01:57:46.567611Z",
+  "meeting_count": 18,
   "meetings": [
     {
       "id": "2026-03-17_regular",
@@ -12,6 +12,193 @@
       "has_agenda": false,
       "has_notes": true,
       "pdf_filename": "agenda_2026-03-17_regular.pdf"
+    },
+    {
+      "id": "2026-03-02_special",
+      "meeting_date": "2026-03-02",
+      "meeting_type": "special",
+      "date_display": "March 2, 2026",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2026-03-02_special.pdf"
+    },
+    {
+      "id": "2026-02-17_regular",
+      "meeting_date": "2026-02-17",
+      "meeting_type": "regular",
+      "date_display": "February 17, 2026",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2026-02-17_regular.pdf"
+    },
+    {
+      "id": "2026-02-02_workshop",
+      "meeting_date": "2026-02-02",
+      "meeting_type": "workshop",
+      "date_display": "February 2, 2026",
+      "type_display": "Workshop",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2026-02-02_special.pdf"
+    },
+    {
+      "id": "2026-01-20_regular",
+      "meeting_date": "2026-01-20",
+      "meeting_type": "regular",
+      "date_display": "January 20, 2026",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2026-01-20_regular.pdf"
+    },
+    {
+      "id": "2026-01-13_audit_committee",
+      "meeting_date": "2026-01-13",
+      "meeting_type": "audit_committee",
+      "date_display": "January 13, 2026",
+      "type_display": "Audit Committee Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2025-12-16_regular",
+      "meeting_date": "2025-12-16",
+      "meeting_type": "regular",
+      "date_display": "December 16, 2025",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-12-16_regular.pdf"
+    },
+    {
+      "id": "2025-11-18_regular",
+      "meeting_date": "2025-11-18",
+      "meeting_type": "regular",
+      "date_display": "November 18, 2025",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-11-18_regular.pdf"
+    },
+    {
+      "id": "2025-10-21_regular",
+      "meeting_date": "2025-10-21",
+      "meeting_type": "regular",
+      "date_display": "October 21, 2025",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-10-21_regular.pdf"
+    },
+    {
+      "id": "2025-10-07_special",
+      "meeting_date": "2025-10-07",
+      "meeting_type": "special",
+      "date_display": "October 7, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-10-07_special.pdf"
+    },
+    {
+      "id": "2025-09-18_special",
+      "meeting_date": "2025-09-18",
+      "meeting_type": "special",
+      "date_display": "September 18, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-09-18_special.pdf"
+    },
+    {
+      "id": "2025-09-16_regular",
+      "meeting_date": "2025-09-16",
+      "meeting_type": "regular",
+      "date_display": "September 16, 2025",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-09-16_regular.pdf"
+    },
+    {
+      "id": "2025-09-10_audit_and_investment_committee",
+      "meeting_date": "2025-09-10",
+      "meeting_type": "audit_and_investment_committee",
+      "date_display": "September 10, 2025",
+      "type_display": "Audit and Investment Committee Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2025-08-27_special",
+      "meeting_date": "2025-08-27",
+      "meeting_type": "special",
+      "date_display": "August 27, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-08-27_special.pdf"
+    },
+    {
+      "id": "2025-08-21_special",
+      "meeting_date": "2025-08-21",
+      "meeting_type": "special",
+      "date_display": "August 21, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-08-21_special.pdf"
+    },
+    {
+      "id": "2025-08-20_special",
+      "meeting_date": "2025-08-20",
+      "meeting_type": "special",
+      "date_display": "August 20, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-08-20_special.pdf"
+    },
+    {
+      "id": "2025-08-19_regular",
+      "meeting_date": "2025-08-19",
+      "meeting_type": "regular",
+      "date_display": "August 19, 2025",
+      "type_display": "Regular Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-08-19_regular.pdf"
+    },
+    {
+      "id": "2025-08-05_special",
+      "meeting_date": "2025-08-05",
+      "meeting_type": "special",
+      "date_display": "August 5, 2025",
+      "type_display": "Special Meeting",
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": "agenda_2025-08-05_special.pdf"
     }
   ]
 }
