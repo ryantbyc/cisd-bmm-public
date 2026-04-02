@@ -141,6 +141,8 @@
       max-width: 900px;
       margin: 0 auto;
     }
+    .meeting-title-bar .back-link { display: inline-block; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; margin-bottom: 0.5rem; }
+    .meeting-title-bar .back-link:hover { color: var(--text-primary); }
     .meeting-title-bar h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.2rem; color: var(--text-primary); }
     .meeting-title-bar .meta { font-size: 0.9rem; color: var(--text-secondary); }
 
@@ -505,7 +507,8 @@
 <header>
   <div class="header-inner">
     <div class="header-brand">
-      <a href="index.html">&#8592; All Meetings</a>
+      <h1>CISD Board Meeting Monitor</h1>
+      <p>Constituent summaries of Conroe ISD Board of Trustees meetings</p>
     </div>
   </div>
 </header>
@@ -520,6 +523,7 @@
 
 <div class="meeting-title-bar">
   <div class="meeting-title-bar-inner">
+    <a class="back-link" href="index.html">&#8592; All Meetings</a>
     <h1 id="page-title">Loading meeting...</h1>
     <div class="meta" id="page-meta"></div>
   </div>
