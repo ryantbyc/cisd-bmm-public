@@ -130,8 +130,19 @@
 
     .header-brand a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; }
     .header-brand a:hover { color: white; }
-    .header-brand h1 { font-size: 1.4rem; font-weight: 700; margin-top: 0.35rem; }
-    .header-brand .meta { font-size: 0.88rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    /* ── Meeting title block (in page body, not header) ───────────── */
+    .meeting-title-bar {
+      background: var(--bg-page);
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .meeting-title-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .meeting-title-bar h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.2rem; color: var(--text-primary); }
+    .meeting-title-bar .meta { font-size: 0.9rem; color: var(--text-secondary); }
 
     /* ── Controls bar ──────────────────────────────────────────── */
     .controls-bar {
@@ -495,8 +506,6 @@
   <div class="header-inner">
     <div class="header-brand">
       <a href="index.html">&#8592; All Meetings</a>
-      <h1 id="page-title">Loading meeting...</h1>
-      <div class="meta" id="page-meta"></div>
     </div>
   </div>
 </header>
@@ -509,8 +518,15 @@
   </div>
 </div>
 
+<div class="meeting-title-bar">
+  <div class="meeting-title-bar-inner">
+    <h1 id="page-title">Loading meeting...</h1>
+    <div class="meta" id="page-meta"></div>
+  </div>
+</div>
+
 <div class="disclaimer">
-  <div class="disclaimer-inner">Unofficial summaries based on public agendas and auto-generated transcripts. Not affiliated with or endorsed by Conroe ISD.</div>
+  <div class="disclaimer-inner">Unofficial summaries generated from public records. Not affiliated with or endorsed by Conroe Independent School District.</div>
 </div>
 
 <main>
