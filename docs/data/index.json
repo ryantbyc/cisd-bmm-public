@@ -1,13 +1,19 @@
 {
-  "last_updated": "2026-04-02T02:32:51.386965Z",
-  "meeting_count": 54,
+  "last_updated": "2026-04-08T01:25:59.357547Z",
+  "meeting_count": 205,
   "meetings": [
     {
       "id": "2026-03-17_regular",
       "meeting_date": "2026-03-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "March 17, 2026",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 36,
       "has_agenda": true,
       "has_notes": true,
@@ -17,8 +23,14 @@
       "id": "2026-03-02_special",
       "meeting_date": "2026-03-02",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "March 2, 2026",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -28,8 +40,14 @@
       "id": "2026-02-17_regular",
       "meeting_date": "2026-02-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "February 17, 2026",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -39,8 +57,14 @@
       "id": "2026-02-02_workshop",
       "meeting_date": "2026-02-02",
       "meeting_type": "workshop",
+      "meeting_types": [
+        "workshop"
+      ],
       "date_display": "February 2, 2026",
       "type_display": "Workshop",
+      "types_display": [
+        "Workshop"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -50,8 +74,14 @@
       "id": "2026-01-20_regular",
       "meeting_date": "2026-01-20",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "January 20, 2026",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -61,8 +91,14 @@
       "id": "2026-01-13_audit_committee",
       "meeting_date": "2026-01-13",
       "meeting_type": "audit_committee",
+      "meeting_types": [
+        "audit_committee"
+      ],
       "date_display": "January 13, 2026",
       "type_display": "Audit Committee Meeting",
+      "types_display": [
+        "Audit Committee Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -72,8 +108,14 @@
       "id": "2025-12-16_regular",
       "meeting_date": "2025-12-16",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "December 16, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -83,8 +125,14 @@
       "id": "2025-11-18_regular",
       "meeting_date": "2025-11-18",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "November 18, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -94,8 +142,14 @@
       "id": "2025-10-21_regular",
       "meeting_date": "2025-10-21",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "October 21, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -105,8 +159,14 @@
       "id": "2025-10-07_special",
       "meeting_date": "2025-10-07",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "October 7, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -116,8 +176,14 @@
       "id": "2025-09-18_special",
       "meeting_date": "2025-09-18",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "September 18, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -127,8 +193,14 @@
       "id": "2025-09-16_regular",
       "meeting_date": "2025-09-16",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "September 16, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -138,8 +210,14 @@
       "id": "2025-09-10_audit_committee",
       "meeting_date": "2025-09-10",
       "meeting_type": "audit_committee",
+      "meeting_types": [
+        "audit_committee"
+      ],
       "date_display": "September 10, 2025",
       "type_display": "Audit Committee Meeting",
+      "types_display": [
+        "Audit Committee Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -149,8 +227,14 @@
       "id": "2025-08-27_special",
       "meeting_date": "2025-08-27",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "August 27, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -160,8 +244,14 @@
       "id": "2025-08-21_special",
       "meeting_date": "2025-08-21",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "August 21, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -171,8 +261,14 @@
       "id": "2025-08-20_special",
       "meeting_date": "2025-08-20",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "August 20, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -182,8 +278,14 @@
       "id": "2025-08-19_regular",
       "meeting_date": "2025-08-19",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "August 19, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -193,8 +295,14 @@
       "id": "2025-08-05_special",
       "meeting_date": "2025-08-05",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "August 5, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -204,8 +312,14 @@
       "id": "2025-07-15_regular",
       "meeting_date": "2025-07-15",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "July 15, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -215,8 +329,14 @@
       "id": "2025-06-24_special",
       "meeting_date": "2025-06-24",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "June 24, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -226,8 +346,14 @@
       "id": "2025-06-17_regular",
       "meeting_date": "2025-06-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "June 17, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -237,8 +363,14 @@
       "id": "2025-06-10_regular",
       "meeting_date": "2025-06-10",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "June 10, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -248,8 +380,14 @@
       "id": "2025-06-04_regular",
       "meeting_date": "2025-06-04",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "June 4, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -259,8 +397,14 @@
       "id": "2025-05-29_special",
       "meeting_date": "2025-05-29",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "May 29, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -270,8 +414,14 @@
       "id": "2025-05-19_special",
       "meeting_date": "2025-05-19",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "May 19, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -281,8 +431,14 @@
       "id": "2025-05-13_regular",
       "meeting_date": "2025-05-13",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "May 13, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -292,8 +448,14 @@
       "id": "2025-05-07_regular",
       "meeting_date": "2025-05-07",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "May 7, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -303,8 +465,14 @@
       "id": "2025-05-05_special",
       "meeting_date": "2025-05-05",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "May 5, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -314,8 +482,14 @@
       "id": "2025-04-29_regular",
       "meeting_date": "2025-04-29",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "April 29, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -325,8 +499,14 @@
       "id": "2025-04-24_regular",
       "meeting_date": "2025-04-24",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "April 24, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -336,8 +516,14 @@
       "id": "2025-04-15_regular",
       "meeting_date": "2025-04-15",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "April 15, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -347,8 +533,14 @@
       "id": "2025-04-01_special",
       "meeting_date": "2025-04-01",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "April 1, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -358,8 +550,14 @@
       "id": "2025-03-25_regular",
       "meeting_date": "2025-03-25",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "March 25, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -369,8 +567,14 @@
       "id": "2025-03-21_special",
       "meeting_date": "2025-03-21",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "March 21, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -380,8 +584,14 @@
       "id": "2025-03-18_regular",
       "meeting_date": "2025-03-18",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "March 18, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -391,8 +601,14 @@
       "id": "2025-02-28_special",
       "meeting_date": "2025-02-28",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "February 28, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -402,8 +618,14 @@
       "id": "2025-02-18_regular",
       "meeting_date": "2025-02-18",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "February 18, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -413,8 +635,14 @@
       "id": "2025-02-04_special",
       "meeting_date": "2025-02-04",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "February 4, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -424,8 +652,14 @@
       "id": "2025-01-28_regular",
       "meeting_date": "2025-01-28",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "January 28, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -435,8 +669,14 @@
       "id": "2025-01-23_regular",
       "meeting_date": "2025-01-23",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "January 23, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -446,8 +686,14 @@
       "id": "2025-01-16_regular",
       "meeting_date": "2025-01-16",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "January 16, 2025",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -457,8 +703,14 @@
       "id": "2025-01-07_special",
       "meeting_date": "2025-01-07",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "January 7, 2025",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -468,8 +720,14 @@
       "id": "2024-12-17_regular",
       "meeting_date": "2024-12-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "December 17, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -479,8 +737,14 @@
       "id": "2024-12-03_special",
       "meeting_date": "2024-12-03",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "December 3, 2024",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -490,8 +754,14 @@
       "id": "2024-11-19_regular",
       "meeting_date": "2024-11-19",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "November 19, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -501,8 +771,14 @@
       "id": "2024-11-18_special",
       "meeting_date": "2024-11-18",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "November 18, 2024",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -512,8 +788,14 @@
       "id": "2024-11-12_special",
       "meeting_date": "2024-11-12",
       "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
       "date_display": "November 12, 2024",
       "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -523,8 +805,14 @@
       "id": "2024-10-17_regular",
       "meeting_date": "2024-10-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "October 17, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -534,8 +822,14 @@
       "id": "2024-10-15_regular",
       "meeting_date": "2024-10-15",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "October 15, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -545,8 +839,14 @@
       "id": "2024-10-08_regular",
       "meeting_date": "2024-10-08",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "October 8, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -556,8 +856,14 @@
       "id": "2024-09-17_regular",
       "meeting_date": "2024-09-17",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "September 17, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -567,8 +873,14 @@
       "id": "2024-09-10_regular",
       "meeting_date": "2024-09-10",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "September 10, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -578,8 +890,14 @@
       "id": "2024-08-20_regular",
       "meeting_date": "2024-08-20",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
       "date_display": "August 20, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
@@ -589,8 +907,2585 @@
       "id": "2024-08-06_regular",
       "meeting_date": "2024-08-06",
       "meeting_type": "regular",
+      "meeting_types": [
+        "regular",
+        "workshop",
+        "budget_tax_rate"
+      ],
       "date_display": "August 6, 2024",
       "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting",
+        "Workshop",
+        "Budget Tax Rate Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-07-16_regular",
+      "meeting_date": "2024-07-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 16, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-06-18_regular",
+      "meeting_date": "2024-06-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 18, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-06-11_regular",
+      "meeting_date": "2024-06-11",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 11, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-06-04_special",
+      "meeting_date": "2024-06-04",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "June 4, 2024",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-05-14_regular",
+      "meeting_date": "2024-05-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 14, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-05-08_regular",
+      "meeting_date": "2024-05-08",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 8, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-04-24_regular",
+      "meeting_date": "2024-04-24",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 24, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-04-23_regular",
+      "meeting_date": "2024-04-23",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 23, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-04-16_regular",
+      "meeting_date": "2024-04-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 16, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-04-02_special",
+      "meeting_date": "2024-04-02",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "April 2, 2024",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-03-26_regular",
+      "meeting_date": "2024-03-26",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 26, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-03-19_regular",
+      "meeting_date": "2024-03-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 19, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-02-20_regular",
+      "meeting_date": "2024-02-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 20, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-02-06_regular",
+      "meeting_date": "2024-02-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 6, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-01-23_regular",
+      "meeting_date": "2024-01-23",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 23, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-01-16_regular",
+      "meeting_date": "2024-01-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 16, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2024-01-10_regular",
+      "meeting_date": "2024-01-10",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 10, 2024",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-12-12_regular",
+      "meeting_date": "2023-12-12",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 12, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-12-05_regular",
+      "meeting_date": "2023-12-05",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 5, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-11-30_regular",
+      "meeting_date": "2023-11-30",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 30, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-11-28_regular",
+      "meeting_date": "2023-11-28",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 28, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-11-14_regular",
+      "meeting_date": "2023-11-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 14, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-10-17_regular",
+      "meeting_date": "2023-10-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 17, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-10-03_regular",
+      "meeting_date": "2023-10-03",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 3, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-09-19_regular",
+      "meeting_date": "2023-09-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 19, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-09-13_regular",
+      "meeting_date": "2023-09-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 13, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-08-15_regular",
+      "meeting_date": "2023-08-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 15, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-08-01_special",
+      "meeting_date": "2023-08-01",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "August 1, 2023",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-07-18_regular",
+      "meeting_date": "2023-07-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 18, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-06-22_regular",
+      "meeting_date": "2023-06-22",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 22, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-06-20_regular",
+      "meeting_date": "2023-06-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 20, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-06-13_regular",
+      "meeting_date": "2023-06-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 13, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-06-06_regular",
+      "meeting_date": "2023-06-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 6, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-05-22_regular",
+      "meeting_date": "2023-05-22",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 22, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-05-16_regular",
+      "meeting_date": "2023-05-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 16, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-05-10_regular",
+      "meeting_date": "2023-05-10",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 10, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-04-25_regular",
+      "meeting_date": "2023-04-25",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 25, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-04-19_regular",
+      "meeting_date": "2023-04-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 19, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-04-18_regular",
+      "meeting_date": "2023-04-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 18, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-04-04_regular",
+      "meeting_date": "2023-04-04",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 4, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-03-21_regular",
+      "meeting_date": "2023-03-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 21, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-03-07_regular",
+      "meeting_date": "2023-03-07",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 7, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-02-21_regular",
+      "meeting_date": "2023-02-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 21, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-02-07_regular",
+      "meeting_date": "2023-02-07",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 7, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-02-01_regular",
+      "meeting_date": "2023-02-01",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 1, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-01-17_regular",
+      "meeting_date": "2023-01-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 17, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-01-11_regular",
+      "meeting_date": "2023-01-11",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 11, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2023-01-10_regular",
+      "meeting_date": "2023-01-10",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 10, 2023",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-12-13_regular",
+      "meeting_date": "2022-12-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 13, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-12-06_special",
+      "meeting_date": "2022-12-06",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "December 6, 2022",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-11-18_special",
+      "meeting_date": "2022-11-18",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "November 18, 2022",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-11-15_regular",
+      "meeting_date": "2022-11-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 15, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-10-18_regular",
+      "meeting_date": "2022-10-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 18, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-09-20_regular",
+      "meeting_date": "2022-09-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 20, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-09-14_regular",
+      "meeting_date": "2022-09-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 14, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-08-16_regular",
+      "meeting_date": "2022-08-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 16, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-08-02_regular",
+      "meeting_date": "2022-08-02",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 2, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-06-21_regular",
+      "meeting_date": "2022-06-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 21, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-06-01_regular",
+      "meeting_date": "2022-06-01",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 1, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-05-17_regular",
+      "meeting_date": "2022-05-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 17, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-05-11_regular",
+      "meeting_date": "2022-05-11",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 11, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-05-02_special",
+      "meeting_date": "2022-05-02",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "May 2, 2022",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-04-05_special",
+      "meeting_date": "2022-04-05",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "April 5, 2022",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-03-22_regular",
+      "meeting_date": "2022-03-22",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 22, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-02-15_regular",
+      "meeting_date": "2022-02-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 15, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-02-01_regular",
+      "meeting_date": "2022-02-01",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 1, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2022-01-18_regular",
+      "meeting_date": "2022-01-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 18, 2022",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-12-14_regular",
+      "meeting_date": "2021-12-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 14, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-11-16_regular",
+      "meeting_date": "2021-11-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 16, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-10-05_regular",
+      "meeting_date": "2021-10-05",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 5, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-09-21_regular",
+      "meeting_date": "2021-09-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 21, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-08-17_special",
+      "meeting_date": "2021-08-17",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "August 17, 2021",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-07-20_regular",
+      "meeting_date": "2021-07-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 20, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-06-15_regular",
+      "meeting_date": "2021-06-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 15, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-06-02_regular",
+      "meeting_date": "2021-06-02",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 2, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-05-18_regular",
+      "meeting_date": "2021-05-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 18, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-05-03_special",
+      "meeting_date": "2021-05-03",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "May 3, 2021",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-04-20_regular",
+      "meeting_date": "2021-04-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 20, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-04-06_regular",
+      "meeting_date": "2021-04-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 6, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-03-30_regular",
+      "meeting_date": "2021-03-30",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 30, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-03-23_regular",
+      "meeting_date": "2021-03-23",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 23, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-03-10_regular",
+      "meeting_date": "2021-03-10",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 10, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-02-23_regular",
+      "meeting_date": "2021-02-23",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 23, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-02-02_regular",
+      "meeting_date": "2021-02-02",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 2, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-01-19_regular",
+      "meeting_date": "2021-01-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 19, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2021-01-13_regular",
+      "meeting_date": "2021-01-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 13, 2021",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-12-15_regular",
+      "meeting_date": "2020-12-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 15, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-11-17_regular",
+      "meeting_date": "2020-11-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 17, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-10-20_regular",
+      "meeting_date": "2020-10-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 20, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-10-06_regular",
+      "meeting_date": "2020-10-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 6, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-09-15_regular",
+      "meeting_date": "2020-09-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 15, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-09-09_regular",
+      "meeting_date": "2020-09-09",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 9, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-08-18_regular",
+      "meeting_date": "2020-08-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 18, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-08-04_regular",
+      "meeting_date": "2020-08-04",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 4, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-07-21_regular",
+      "meeting_date": "2020-07-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 21, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-06-16_regular",
+      "meeting_date": "2020-06-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 16, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-05-27_regular",
+      "meeting_date": "2020-05-27",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 27, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-05-19_regular",
+      "meeting_date": "2020-05-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 19, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-05-13_regular",
+      "meeting_date": "2020-05-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 13, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-04-21_regular",
+      "meeting_date": "2020-04-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 21, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-04-07_regular",
+      "meeting_date": "2020-04-07",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 7, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-03-17_regular",
+      "meeting_date": "2020-03-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 17, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-02-25_special",
+      "meeting_date": "2020-02-25",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "February 25, 2020",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-02-04_regular",
+      "meeting_date": "2020-02-04",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 4, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2020-01-21_regular",
+      "meeting_date": "2020-01-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 21, 2020",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-12-17_regular",
+      "meeting_date": "2019-12-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 17, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-11-19_regular",
+      "meeting_date": "2019-11-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 19, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-09-17_regular",
+      "meeting_date": "2019-09-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 17, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-08-20_regular",
+      "meeting_date": "2019-08-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 20, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-08-13_special",
+      "meeting_date": "2019-08-13",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "August 13, 2019",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-08-06_regular",
+      "meeting_date": "2019-08-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 6, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-07-29_regular",
+      "meeting_date": "2019-07-29",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 29, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-07-16_regular",
+      "meeting_date": "2019-07-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 16, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-06-18_regular",
+      "meeting_date": "2019-06-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 18, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-06-04_regular",
+      "meeting_date": "2019-06-04",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 4, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-05-21_regular",
+      "meeting_date": "2019-05-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 21, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-05-14_special",
+      "meeting_date": "2019-05-14",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "May 14, 2019",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-05-14_regular",
+      "meeting_date": "2019-05-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 14, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-04-16_regular",
+      "meeting_date": "2019-04-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 16, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-02-19_regular",
+      "meeting_date": "2019-02-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 19, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2019-01-15_regular",
+      "meeting_date": "2019-01-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 15, 2019",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-12-18_regular",
+      "meeting_date": "2018-12-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 18, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-11-13_regular",
+      "meeting_date": "2018-11-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 13, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-10-16_regular",
+      "meeting_date": "2018-10-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 16, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-09-18_regular",
+      "meeting_date": "2018-09-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 18, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-08-21_regular",
+      "meeting_date": "2018-08-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 21, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-07-17_regular",
+      "meeting_date": "2018-07-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 17, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-06-19_regular",
+      "meeting_date": "2018-06-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 19, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-06-05_special",
+      "meeting_date": "2018-06-05",
+      "meeting_type": "special",
+      "meeting_types": [
+        "special"
+      ],
+      "date_display": "June 5, 2018",
+      "type_display": "Special Meeting",
+      "types_display": [
+        "Special Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-05-15_regular",
+      "meeting_date": "2018-05-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 15, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-04-17_regular",
+      "meeting_date": "2018-04-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 17, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-03-20_regular",
+      "meeting_date": "2018-03-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 20, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-02-20_regular",
+      "meeting_date": "2018-02-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 20, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-02-06_regular",
+      "meeting_date": "2018-02-06",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 6, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2018-01-17_regular",
+      "meeting_date": "2018-01-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 17, 2018",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-12-19_regular",
+      "meeting_date": "2017-12-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 19, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-11-14_regular",
+      "meeting_date": "2017-11-14",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 14, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-10-17_regular",
+      "meeting_date": "2017-10-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "October 17, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-09-19_regular",
+      "meeting_date": "2017-09-19",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 19, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-08-15_regular",
+      "meeting_date": "2017-08-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 15, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-07-18_regular",
+      "meeting_date": "2017-07-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "July 18, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-06-20_regular",
+      "meeting_date": "2017-06-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "June 20, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-05-16_regular",
+      "meeting_date": "2017-05-16",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "May 16, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-04-18_regular",
+      "meeting_date": "2017-04-18",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "April 18, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-03-21_regular",
+      "meeting_date": "2017-03-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "March 21, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-02-21_regular",
+      "meeting_date": "2017-02-21",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "February 21, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2017-01-17_regular",
+      "meeting_date": "2017-01-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "January 17, 2017",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2016-12-13_regular",
+      "meeting_date": "2016-12-13",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "December 13, 2016",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2016-11-15_regular",
+      "meeting_date": "2016-11-15",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "November 15, 2016",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2016-09-20_regular",
+      "meeting_date": "2016-09-20",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "September 20, 2016",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
+      "item_count": 0,
+      "has_agenda": false,
+      "has_notes": true,
+      "pdf_filename": null
+    },
+    {
+      "id": "2016-08-17_regular",
+      "meeting_date": "2016-08-17",
+      "meeting_type": "regular",
+      "meeting_types": [
+        "regular"
+      ],
+      "date_display": "August 17, 2016",
+      "type_display": "Regular Meeting",
+      "types_display": [
+        "Regular Meeting"
+      ],
       "item_count": 0,
       "has_agenda": false,
       "has_notes": true,
