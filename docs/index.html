@@ -411,9 +411,17 @@
     return { month: MONTHS[m - 1], day: d, year: y };
   }
 
+  function typeClass(t) {
+    return t === 'regular' ? 'type-regular' : t === 'special' ? 'type-special' : 'type-other';
+  }
+
   function buildCard(m) {
     const { month, day, year } = formatDate(m.meeting_date);
-    const typeClass = m.meeting_type === 'regular' ? 'type-regular' : m.meeting_type === 'special' ? 'type-special' : 'type-other';
+    const types = m.meeting_types || [m.meeting_type];
+    const displays = m.types_display || [m.type_display];
+    const typeBadges = types.map((t, i) =>
+      `<span class="meeting-type ${typeClass(t)}">${displays[i] || t.replace(/_/g, ' ')}</span>`
+    ).join('');
     const badges = [];
     if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
     if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
@@ -427,8 +435,8 @@
         <div class="year">${year}</div>
       </div>
       <div class="meeting-info">
-        <h3>Board of Trustees ${m.type_display} ${m.date_display}</h3>
-        <span class="meeting-type ${typeClass}">${m.meeting_type.replace(/_/g, ' ')}</span>
+        <h3>Board of Trustees — ${m.date_display}</h3>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.25rem">${typeBadges}</div>
         <div class="meeting-badges">${badges.join('')}</div>
       </div>
       <div class="arrow">&#8250;</div>`;
@@ -452,9 +460,18 @@
     meetings.forEach(m => container.appendChild(buildCard(m)));
   }
 
+  function meetingTypes(m) {
+    return m.meeting_types || [m.meeting_type];
+  }
+
   function buildFilters(meetings) {
-    const types = [...new Set(meetings.map(m => m.meeting_type))].sort();
-    if (types.length < 2) return; // No need for filters with only one type
+    const typeSet = new Map(); // type → display label
+    meetings.forEach(m => {
+      const types = meetingTypes(m);
+      const displays = m.types_display || [m.type_display];
+      types.forEach((t, i) => { if (!typeSet.has(t)) typeSet.set(t, displays[i] || t.replace(/_/g, ' ')); });
+    });
+    if (typeSet.size < 2) return;
     filtersEl.innerHTML = '';
     const allBtn = document.createElement('button');
     allBtn.className = 'filter-btn active';
@@ -462,10 +479,10 @@
     allBtn.dataset.type = '';
     allBtn.addEventListener('click', () => setFilter(''));
     filtersEl.appendChild(allBtn);
-    types.forEach(type => {
+    [...typeSet.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([type, label]) => {
       const btn = document.createElement('button');
       btn.className = 'filter-btn';
-      btn.textContent = type.replace(/_/g, ' ');
+      btn.textContent = label;
       btn.dataset.type = type;
       btn.addEventListener('click', () => setFilter(type));
       filtersEl.appendChild(btn);
@@ -482,7 +499,7 @@
 
   function onSearch() {
     const q = searchInput.value.trim();
-    let pool = activeFilter ? allMeetings.filter(m => m.meeting_type === activeFilter) : allMeetings;
+    let pool = activeFilter ? allMeetings.filter(m => meetingTypes(m).includes(activeFilter)) : allMeetings;
     if (!q) {
       countEl.style.display = 'none';
       renderMeetings(pool);
