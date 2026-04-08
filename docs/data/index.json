@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08T01:25:59.357547Z",
+  "last_updated": "2026-04-08T01:48:09.958227Z",
   "meeting_count": 205,
   "meetings": [
     {
@@ -870,16 +870,16 @@
       "pdf_filename": null
     },
     {
-      "id": "2024-09-10_regular",
+      "id": "2024-09-10_audit_committee",
       "meeting_date": "2024-09-10",
-      "meeting_type": "regular",
+      "meeting_type": "audit_committee",
       "meeting_types": [
-        "regular"
+        "audit_committee"
       ],
       "date_display": "September 10, 2024",
-      "type_display": "Regular Meeting",
+      "type_display": "Audit Committee Meeting",
       "types_display": [
-        "Regular Meeting"
+        "Audit Committee Meeting"
       ],
       "item_count": 0,
       "has_agenda": false,
