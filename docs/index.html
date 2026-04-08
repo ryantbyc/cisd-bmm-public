@@ -497,17 +497,47 @@
     onSearch();
   }
 
+  function debounce(fn, ms) {
+    let timer;
+    return (...args) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), ms); };
+  }
+
   function onSearch() {
     const q = searchInput.value.trim();
-    let pool = activeFilter ? allMeetings.filter(m => meetingTypes(m).includes(activeFilter)) : allMeetings;
+    const pool = activeFilter ? allMeetings.filter(m => meetingTypes(m).includes(activeFilter)) : allMeetings;
     if (!q) {
       countEl.style.display = 'none';
       renderMeetings(pool);
       return;
     }
-    const results = fuse ? fuse.search(q).map(r => {
-      return pool.find(m => m.id === r.item.id);
-    }).filter(Boolean) : [];
+
+    const qLower = q.toLowerCase();
+    const poolIds = new Set(pool.map(m => m.id));
+
+    // Phase 1: fast exact substring match on date and type fields
+    const exactIds = new Set();
+    const exactMatches = [];
+    pool.forEach(m => {
+      const haystack = [
+        m.meeting_date,
+        m.date_display,
+        ...(m.types_display || [m.type_display]),
+      ].join(' ').toLowerCase();
+      if (haystack.includes(qLower)) {
+        exactMatches.push(m);
+        exactIds.add(m.id);
+      }
+    });
+
+    // Phase 2: Fuse full-text search for content, excluding exact matches
+    const fuseMatches = fuse
+      ? fuse.search(q)
+          .filter(r => poolIds.has(r.item.id) && !exactIds.has(r.item.id))
+          .map(r => pool.find(m => m.id === r.item.id))
+          .filter(Boolean)
+      : [];
+
+    const results = [...exactMatches, ...fuseMatches];
     countEl.textContent = `${results.length} meeting${results.length !== 1 ? 's' : ''} found`;
     countEl.style.display = 'block';
     renderMeetings(results);
@@ -532,16 +562,17 @@
     if (searchDocs.length) {
       fuse = new Fuse(searchDocs, {
         keys: [
+          { name: 'meeting_date',  weight: 0.4 },
           { name: 'date_display',  weight: 0.3 },
+          { name: 'type_display',  weight: 0.15 },
           { name: 'agenda_text',   weight: 0.5 },
-          { name: 'notes_text',    weight: 0.4 },
-          { name: 'type_display',  weight: 0.1 },
+          { name: 'notes_text',    weight: 0.35 },
         ],
-        threshold: 0.35,
+        threshold: 0.3,
         ignoreLocation: true,
-        minMatchCharLength: 3,
+        minMatchCharLength: 2,
       });
-      searchInput.addEventListener('input', onSearch);
+      searchInput.addEventListener('input', debounce(onSearch, 200));
     } else {
       searchInput.placeholder = 'Search unavailable — run site-publisher to generate index';
       searchInput.disabled = true;
