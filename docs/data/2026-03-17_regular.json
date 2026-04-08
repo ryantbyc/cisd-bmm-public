@@ -2,14 +2,20 @@
   "id": "2026-03-17_regular",
   "meeting_date": "2026-03-17",
   "meeting_type": "regular",
+  "meeting_types": [
+    "regular"
+  ],
   "title": "Conroe ISD Board Meeting — March 17, 2026",
   "date_display": "March 17, 2026",
   "type_display": "Regular Meeting",
+  "types_display": [
+    "Regular Meeting"
+  ],
   "item_count": 36,
   "has_agenda": true,
   "has_notes": true,
   "pdf_filename": "agenda_2026-03-17_regular.pdf",
-  "generated_at": "2026-03-29T02:23:42.291467Z",
+  "generated_at": "2026-04-08T02:20:59.307508Z",
   "sections": [
     {
       "name": "Regular Meeting Breakdown",

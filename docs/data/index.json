@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08T01:51:10.844113Z",
+  "last_updated": "2026-04-08T02:21:02.902122Z",
   "meeting_count": 205,
   "meetings": [
     {
@@ -908,16 +908,12 @@
       "meeting_date": "2024-08-06",
       "meeting_type": "regular",
       "meeting_types": [
-        "regular",
-        "workshop",
-        "budget_tax_rate"
+        "regular"
       ],
       "date_display": "August 6, 2024",
       "type_display": "Regular Meeting",
       "types_display": [
-        "Regular Meeting",
-        "Workshop",
-        "Budget Tax Rate Meeting"
+        "Regular Meeting"
       ],
       "item_count": 0,
       "has_agenda": false,
