@@ -163,6 +163,71 @@
       margin: 0 auto;
     }
 
+    /* ── Signup bar ────────────────────────────────────────────── */
+    .signup-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      padding: 0.65rem 1.5rem;
+    }
+
+    .signup-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .signup-bar label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .signup-bar input[type="email"] {
+      flex: 1;
+      min-width: 180px;
+      max-width: 280px;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.85rem;
+      border: 1px solid var(--border-section);
+      border-radius: 5px;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .signup-bar input[type="email"]:focus {
+      border-color: var(--bg-header);
+      box-shadow: 0 0 0 2px rgba(26,58,92,0.1);
+    }
+
+    .signup-bar button {
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--bg-header);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .signup-bar button:hover { opacity: 0.88; }
+    .signup-bar button:disabled { opacity: 0.5; cursor: default; }
+
+    .signup-msg {
+      font-size: 0.82rem;
+      margin-left: 0.25rem;
+    }
+
+    .signup-msg.success { color: var(--text-badge-nt); }
+    .signup-msg.error   { color: #c0392b; }
+
     /* ── Main content ──────────────────────────────────────────── */
     main {
       max-width: 900px;
@@ -350,6 +415,15 @@
 
 <div class="disclaimer">
   <div class="disclaimer-inner">Unofficial summaries generated from public records. Not affiliated with or endorsed by Conroe Independent School District.</div>
+</div>
+
+<div class="signup-bar">
+  <div class="signup-bar-inner">
+    <label for="signup-email">Sign up for meeting alerts:</label>
+    <input type="email" id="signup-email" placeholder="your@email.com" autocomplete="email">
+    <button id="signup-btn">Subscribe</button>
+    <span id="signup-msg" class="signup-msg" aria-live="polite"></span>
+  </div>
 </div>
 
 <main>
@@ -579,6 +653,53 @@
     }
   }).catch(() => {
     document.getElementById('loading').textContent = 'Could not load meetings data.';
+  });
+
+  // ── Email signup ──────────────────────────────────────────────
+  document.getElementById('signup-btn').addEventListener('click', async () => {
+    const emailEl = document.getElementById('signup-email');
+    const btn     = document.getElementById('signup-btn');
+    const msg     = document.getElementById('signup-msg');
+    const email   = emailEl.value.trim();
+
+    msg.textContent = '';
+    msg.className = 'signup-msg';
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.classList.add('error');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+
+    try {
+      const resp = await fetch('https://api.boardmonitor.app', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await resp.json();
+      if (resp.ok || data?.error?.code === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
+        emailEl.value = '';
+        msg.textContent = 'You\'re subscribed!';
+        msg.classList.add('success');
+        btn.textContent = 'Subscribe';
+        btn.disabled = false;
+      } else {
+        throw new Error(data?.error?.message || 'Signup failed');
+      }
+    } catch (e) {
+      msg.textContent = e.message || 'Something went wrong. Please try again.';
+      msg.classList.add('error');
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+    }
+  });
+
+  document.getElementById('signup-email').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('signup-btn').click();
   });
 </script>
 
