@@ -711,7 +711,14 @@
     substantiveSections.forEach(sec => {
       const label = document.createElement('div');
       label.className = 'section-label';
-      label.innerHTML = `<span class="section-arrow">▾</span>${escHtml(sec.name)}`;
+      // Strip leading Roman numeral / section number prefixes Claude may add
+      // e.g. "Section VI — Consent Agenda" → "Consent Agenda"
+      //      "VI. Consent Agenda"           → "Consent Agenda"
+      const secName = sec.name
+        .replace(/^section\s+[IVXLCDM]+[\s.—–-]+/i, '')
+        .replace(/^[IVXLCDM]+[.\s—–-]+/i, '')
+        .trim();
+      label.innerHTML = `<span class="section-arrow">▾</span>${escHtml(secName)}`;
 
       const wrapper = document.createElement('div');
       wrapper.className = 'section-items';
