@@ -737,11 +737,11 @@
             ${item.context ? `
             <details open>
               <summary>Context</summary>
-              <div class="detail-body">${escHtml(item.context)}</div>
+              <div class="detail-body">${mdSafe(item.context)}</div>
             </details>` : ''}
             <details open>
               <summary>History</summary>
-              <div class="detail-body ${isNoHistory ? 'no-history' : ''}">${escHtml(item.history || 'No prior history available yet.')}</div>
+              <div class="detail-body ${isNoHistory ? 'no-history' : ''}">${isNoHistory ? escHtml(item.history || 'No prior history available yet.') : mdSafe(item.history)}</div>
             </details>
           </div>`;
         wrapper.appendChild(card);
@@ -846,6 +846,19 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+  }
+
+  // Render a trusted string as inline Markdown (links, bold, italic only)
+  // Links are forced to open in a new tab and only https:// hrefs are allowed
+  function mdSafe(s) {
+    if (typeof marked === 'undefined') return escHtml(s);
+    const renderer = new marked.Renderer();
+    const origLink = renderer.link.bind(renderer);
+    renderer.link = (href, title, text) => {
+      if (typeof href !== 'string' || !href.startsWith('https://')) return escHtml(text);
+      return `<a href="${escHtml(href)}" target="_blank" rel="noopener noreferrer"${title ? ` title="${escHtml(title)}"` : ''}>${text}</a>`;
+    };
+    return marked.parse(String(s), { renderer, breaks: true, gfm: true });
   }
 
   // Configure marked to disable dangerous features
