@@ -206,26 +206,38 @@
     /* ── Tabs ──────────────────────────────────────────────────── */
     .tabs {
       display: flex;
-      gap: 0;
+      gap: 0.4rem;
       margin-bottom: 1.5rem;
       border-bottom: 2px solid var(--border-tabs);
     }
 
     .tab-btn {
-      padding: 0.65rem 1.25rem;
-      font-size: 0.95rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      background: none;
-      border: none;
+      background: var(--bg-card);
+      border: 2px solid var(--border-tabs);
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
       cursor: pointer;
       color: var(--text-secondary);
-      border-bottom: 3px solid transparent;
       margin-bottom: -2px;
-      transition: color 0.15s;
+      position: relative;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
 
-    .tab-btn.active { color: var(--text-section); border-bottom-color: var(--border-accent); }
-    .tab-btn:hover:not(.active) { color: var(--text-section); }
+    .tab-btn.active {
+      background: var(--bg-header);
+      color: #fff;
+      border-color: var(--bg-header);
+      z-index: 1;
+    }
+
+    .tab-btn:hover:not(.active) {
+      background: var(--bg-section-label);
+      color: var(--text-section);
+      border-color: var(--border-accent);
+    }
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
@@ -622,9 +634,15 @@
     tabsEl.innerHTML = '';
     const panels = [];
 
+    // Default to Meeting Notes if available, otherwise Agenda Breakdown
+    const defaultTab = hasNotes ? 'tab-notes' : 'tab-agenda';
+    document.getElementById('tab-agenda').classList.remove('active');
+    document.getElementById('tab-notes').classList.remove('active');
+    document.getElementById(defaultTab).classList.add('active');
+
     if (hasAgenda) {
       const btn = document.createElement('button');
-      btn.className = 'tab-btn active';
+      btn.className = 'tab-btn' + (defaultTab === 'tab-agenda' ? ' active' : '');
       btn.textContent = 'Agenda Breakdown';
       btn.dataset.target = 'tab-agenda';
       tabsEl.appendChild(btn);
@@ -633,7 +651,7 @@
 
     if (hasNotes) {
       const btn = document.createElement('button');
-      btn.className = 'tab-btn' + (hasAgenda ? '' : ' active');
+      btn.className = 'tab-btn' + (defaultTab === 'tab-notes' ? ' active' : '');
       btn.textContent = 'Meeting Notes';
       btn.dataset.target = 'tab-notes';
       tabsEl.appendChild(btn);
@@ -648,11 +666,6 @@
         document.getElementById(btn.dataset.target).classList.add('active');
       });
     });
-
-    if (!hasAgenda && hasNotes) {
-      document.getElementById('tab-notes').classList.add('active');
-      document.getElementById('tab-agenda').classList.remove('active');
-    }
   }
 
   // Tracks all { label, wrapper } pairs for expand/collapse all
