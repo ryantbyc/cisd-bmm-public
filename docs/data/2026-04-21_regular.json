@@ -1,0 +1,289 @@
+{
+  "id": "2026-04-21_regular",
+  "meeting_date": "2026-04-21",
+  "meeting_type": "regular",
+  "meeting_types": [
+    "regular"
+  ],
+  "title": "Conroe ISD Board Meeting — April 21, 2026",
+  "date_display": "April 21, 2026",
+  "type_display": "Regular Meeting",
+  "types_display": [
+    "Regular Meeting"
+  ],
+  "item_count": 31,
+  "has_agenda": true,
+  "has_notes": false,
+  "pdf_filename": "agenda_2026-04-21_regular.pdf",
+  "generated_at": "2026-04-15T21:46:39.018433Z",
+  "sections": [
+    {
+      "name": "Procedural Items",
+      "items": []
+    },
+    {
+      "name": "Closed Session (Section II)",
+      "items": [
+        {
+          "id": "II.A.1",
+          "title": "Discuss Principal Candidate",
+          "context": "The board will meet privately to discuss a candidate for a principal position. Under Texas law (Gov't Code §551.074), personnel matters — including hiring decisions — may be discussed in closed session to protect the privacy of the individuals involved.",
+          "history": "Personnel discussions of this nature are a routine part of CISD board meetings. No specific prior history about this particular candidate is available from the provided records.",
+          "vote": null
+        },
+        {
+          "id": "II.B.1",
+          "title": "Update Pursuant to School Board Policy EHBAG (Local)",
+          "context": "The board will receive a closed-session legal update related to Policy EHBAG (Local), which governs specialized instructional arrangements. This type of closed session is authorized when the board consults with its attorney on legal matters where open discussion could conflict with professional obligations.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "II.C.1",
+          "title": "Regarding Potential Sale of Property",
+          "context": "The board will privately discuss a potential sale of district property. Texas law allows real estate deliberations to occur in closed session when conducting them publicly could harm the district's negotiating position with a third party.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Action on Closed Session Items (Section III)",
+      "items": [
+        {
+          "id": "III.A",
+          "title": "Discussion and Possible Action Regarding Potential Sale of Property",
+          "context": "Following the closed session discussion on real property, the board will return to open session to take any formal vote or action on the potential sale. All final decisions by the board must be made in open session under the Texas Open Meetings Act.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Special Recognitions (Section IV)",
+      "items": [
+        {
+          "id": "IV.A",
+          "title": "2026 UIL/THSPA Class 6A Powerlifting State Champions — Conroe High School",
+          "context": "The board will formally recognize the Conroe High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "IV.B",
+          "title": "2026 UIL/THSPA Class 6A Powerlifting State Champions — Grand Oaks High School",
+          "context": "The board will formally recognize the Grand Oaks High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "IV.C",
+          "title": "2026 UIL/THSPA Class 6A Powerlifting State Champions — The Woodlands High School",
+          "context": "The board will formally recognize The Woodlands High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "IV.D",
+          "title": "2026 UIL Class 6A Boys Soccer State Championship Team — College Park High School",
+          "context": "The board will formally recognize the College Park High School boys soccer team for winning the 2026 UIL Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Consent Agenda (Section VI)",
+      "items": [
+        {
+          "id": "VI.A",
+          "title": "Consider and Approve Minutes",
+          "context": "The board will vote to approve the official minutes from a previous board meeting, confirming they are an accurate record of what occurred. This is a standard procedural requirement for all public governing bodies.",
+          "history": "Approval of meeting minutes is a routine agenda item at every regular CISD board meeting, consistent with prior meetings in August, September, and October 2025.",
+          "vote": null
+        },
+        {
+          "id": "VI.B",
+          "title": "Consider and Approve Amendment to the Budget",
+          "context": "The board will consider approving a change to the district's current operating budget. Budget amendments are common mid-year or end-of-year adjustments made when revenues or expenditures differ from original projections.",
+          "history": "Budget amendments have appeared as consent agenda items in prior CISD regular meetings. No specific details about this amendment are provided in the agenda.",
+          "vote": null
+        },
+        {
+          "id": "VI.C",
+          "title": "Consider on First Reading — Board Policy DBD (Local): Employment Requirements and Restrictions: Conflict of Interest",
+          "context": "The board will review a proposed update to Policy DBD (Local), which sets rules about conflicts of interest for district employees. A \"first reading\" means the board is reviewing the policy for discussion — formal adoption typically occurs at a subsequent meeting.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VI.D",
+          "title": "Consider on First Reading — Board Policy FEA (Local): Attendance: Compulsory Attendance",
+          "context": "The board will review a proposed update to Policy FEA (Local), which governs the district's compliance with Texas compulsory school attendance laws. This is a first reading, meaning no final vote is expected at this meeting.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VI.E",
+          "title": "Consider on First Reading — Board Policy FEC (Local): Attendance: Attendance for Credit",
+          "context": "The board will review a proposed update to Policy FEC (Local), which sets rules about how student attendance affects their ability to earn academic credit. This is a first reading and not a final adoption vote.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VI.F",
+          "title": "Consider on First Reading — Board Policy GC (Local): Public Notices",
+          "context": "The board will review a proposed update to Policy GC (Local), which governs how the district communicates and publishes required public notices. This is a first reading, with formal adoption expected at a later meeting.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VI.G",
+          "title": "Receive Human Resources Report and Consider and Approve Employment of Professional Personnel",
+          "context": "The board will receive a staffing update from Human Resources and vote to formally approve the hiring of professional staff members. This is a routine item required for new hires to be officially authorized by the board.",
+          "history": "Human Resources reports and employment approvals appear as regular consent agenda items at CISD board meetings, consistent with prior meetings in August, September, and October 2025.",
+          "vote": null
+        },
+        {
+          "id": "VI.H",
+          "title": "Receive Financial Reports",
+          "context": "The board will receive routine financial reports summarizing the district's current fiscal status, including revenues, expenditures, and fund balances. This is an informational item with no action required.",
+          "history": "Financial reports are a standing consent agenda item at CISD regular meetings, consistent with prior meeting records provided.",
+          "vote": null
+        },
+        {
+          "id": "VI.I",
+          "title": "Approval of the TCEQ Required Water Conservation and Drought Contingency Plan for the Conroe ISD Moorhead/Caney Creek Water Plant Facility",
+          "context": "The board will vote to approve a state-required water conservation and drought contingency plan for the district's Moorhead/Caney Creek Water Plant. The Texas Commission on Environmental Quality (TCEQ) mandates that public water systems maintain and periodically update such plans.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Human Resources (Section VII)",
+      "items": [
+        {
+          "id": "VII.A",
+          "title": "Recognize Principal for DAEP/JJAEP",
+          "context": "The board will recognize a principal serving the District Alternative Education Program (DAEP) and/or Juvenile Justice Alternative Education Program (JJAEP), which serve students with disciplinary placements. This appears to be an appreciation or formal acknowledgment item.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Administration (Section VIII)",
+      "items": [
+        {
+          "id": "VIII.A",
+          "title": "Reconsider and Approve the Mascot for Cartwright Junior High",
+          "context": "The board will revisit and vote on the official mascot for Cartwright Junior High School. The word \"reconsider\" suggests this topic was previously discussed or voted on and is being brought back for further action or a revised decision.",
+          "history": "No prior history about an initial mascot vote for Cartwright Junior High is available from the provided records, though the use of \"reconsider\" indicates this is not the first time the board has addressed the matter.",
+          "vote": null
+        },
+        {
+          "id": "VIII.B",
+          "title": "Receive Information Regarding Senate Bill 546 Requirement for Bus Seat Belts",
+          "context": "The board will receive a presentation on Texas Senate Bill 546, which relates to seat belt requirements on school buses. This is an informational item to help trustees understand any new legal obligations or implementation timelines the district may face.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VIII.C",
+          "title": "Consider and Possibly Adopt District's Virtual School Plan",
+          "context": "The board will consider formally adopting a plan for the district's virtual (online) school programming. Texas law requires districts offering virtual instruction to have an approved plan in place governing how those programs operate.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "VIII.D",
+          "title": "Receive Information Regarding District Staffing Plan",
+          "context": "The board will receive an informational update on the district's staffing plan, which may address hiring projections, staffing ratios, or workforce needs for an upcoming school year. No formal vote is indicated for this item.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Teaching and Learning (Section IX)",
+      "items": [
+        {
+          "id": "IX.A",
+          "title": "Consider and Possibly Approve Library Materials in Accordance with Texas Education Code §33.026 and Board Policy EFB (Local)",
+          "context": "The board will vote on approving specific library materials for district schools, as required under Texas Education Code §33.026, which sets guidelines for how school boards review and approve library content. This reflects ongoing state-level requirements for board oversight of library collections.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "IX.B",
+          "title": "Consider and Possibly Adopt District's Special Education Homecoming Project Plan",
+          "context": "The board will consider adopting a plan related to a Special Education \"Homecoming Project,\" which may involve programming or inclusion initiatives for students with disabilities. The specific nature of this project is not detailed in the agenda.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "IX.C",
+          "title": "Receive Information Regarding The Texas Standard Character Education Program",
+          "context": "The board will receive an informational presentation on the Texas Standard Character Education Program, a state-supported initiative that incorporates character development into school curriculum and culture. No formal vote is indicated for this item.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Business/Finance (Section X)",
+      "items": [
+        {
+          "id": "X.A",
+          "title": "Receive 2026–2027 Budget Information",
+          "context": "The board will receive an early look at budget projections and planning information for the 2026–2027 school year. This is an informational presentation — formal budget adoption typically occurs later in the spring or summer budget cycle.",
+          "history": "Budget planning presentations are a regular part of the CISD spring meeting calendar. No specific details about the 2026–2027 budget figures are available from the agenda.",
+          "vote": null
+        }
+      ]
+    },
+    {
+      "name": "Planning and Construction (Section XI)",
+      "items": [
+        {
+          "id": "XI.A",
+          "title": "Consider and Approve the Selection of a Construction Manager-at-Risk for The Woodlands 9th Grade and College Park High School Renovations Project",
+          "context": "The board will vote to select a Construction Manager-at-Risk (CMR) — a delivery method where a contractor is hired early to manage costs and construction — for renovation projects at The Woodlands 9th Grade campus and College Park High School. The board will also authorize district leadership to finalize and sign the related contracts. This item involves significant capital expenditure.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "XI.B",
+          "title": "Consider and Approve the Selection of a Construction Manager-at-Risk for The Auxiliary Facility Renovations Project",
+          "context": "The board will vote to select a Construction Manager-at-Risk to oversee renovations to an auxiliary district facility, and will authorize the superintendent or designee to negotiate and execute the necessary contracts. This item involves significant capital expenditure.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "XI.C",
+          "title": "Consider and Approve the Selection of a Construction Manager-at-Risk for the Caney Creek High School Renovation and District Safety and Security Upgrades Project",
+          "context": "The board will vote to select a Construction Manager-at-Risk for renovation work at Caney Creek High School combined with district-wide safety and security improvements, and will authorize leadership to finalize contracts. This item involves significant capital expenditure and touches on campus safety infrastructure.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "XI.D",
+          "title": "Consider and Approve the Selection of a Construction Manager-at-Risk for the Anderson and Glen Loch Elementary School Additions and Renovations Project",
+          "context": "The board will vote to select a Construction Manager-at-Risk for addition and renovation work at Anderson and Glen Loch Elementary Schools, and will authorize the superintendent or designee to negotiate and execute the related contracts. This item involves significant capital expenditure.",
+          "history": "No prior history available yet.",
+          "vote": null
+        },
+        {
+          "id": "XI.E",
+          "title": "Consider and Approve Annexation of San Jacinto Elementary Site into MUD 111",
+          "context": "The board will vote to annex the San Jacinto Elementary School property into Municipal Utility District (MUD) 111, which may affect utility services — such as water and sewer — provided to that campus. The board will also authorize the superintendent to execute any documents needed to complete the transaction.",
+          "history": "No prior history available yet.",
+          "vote": null
+        }
+      ]
+    }
+  ],
+  "agenda_breakdown_md": "# Conroe ISD Board Meeting — 2026-04-21\n*Regular Meeting — Agenda Breakdown*\n*Generated 2026-04-15 21:39 UTC*\n\n---\n\n# Conroe ISD Board of Trustees — Regular Meeting\n**Tuesday, April 21, 2026 | 5:00 PM | Deane L. Sadler Administration Building, 3205 West Davis, Conroe, TX 77304**\n*Meeting may also be accessed virtually at [http://tiny.conroeisd.net/R78KV](http://tiny.conroeisd.net/R78KV)*\n\n---\n\n## Procedural Items\nThe following items are standard meeting procedures and will not be summarized individually:\n- **I.A.** Invocation\n- **I.B.** Pledge of Allegiance\n- **V.** Citizen Participation\n- **XII.** Take Requests from Trustees Regarding Future Board Agenda Items\n- **XIII.** Adjournment\n\n---\n\n## Closed Session (Section II)\n\n### II.A.1. Discuss Principal Candidate\n**Context:** The board will meet privately to discuss a candidate for a principal position. Under Texas law (Gov't Code §551.074), personnel matters — including hiring decisions — may be discussed in closed session to protect the privacy of the individuals involved.\n\n**Historical Summary:** Personnel discussions of this nature are a routine part of CISD board meetings. No specific prior history about this particular candidate is available from the provided records.\n\n---\n\n### II.B.1. Update Pursuant to School Board Policy EHBAG (Local)\n**Context:** The board will receive a closed-session legal update related to Policy EHBAG (Local), which governs specialized instructional arrangements. This type of closed session is authorized when the board consults with its attorney on legal matters where open discussion could conflict with professional obligations.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### II.C.1. Regarding Potential Sale of Property\n**Context:** The board will privately discuss a potential sale of district property. Texas law allows real estate deliberations to occur in closed session when conducting them publicly could harm the district's negotiating position with a third party.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Action on Closed Session Items (Section III)\n\n### III.A. Discussion and Possible Action Regarding Potential Sale of Property\n**Context:** Following the closed session discussion on real property, the board will return to open session to take any formal vote or action on the potential sale. All final decisions by the board must be made in open session under the Texas Open Meetings Act.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Special Recognitions (Section IV)\n\n### IV.A. 2026 UIL/THSPA Class 6A Powerlifting State Champions — Conroe High School\n**Context:** The board will formally recognize the Conroe High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### IV.B. 2026 UIL/THSPA Class 6A Powerlifting State Champions — Grand Oaks High School\n**Context:** The board will formally recognize the Grand Oaks High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### IV.C. 2026 UIL/THSPA Class 6A Powerlifting State Champions — The Woodlands High School\n**Context:** The board will formally recognize The Woodlands High School powerlifting team for winning the 2026 UIL/THSPA Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### IV.D. 2026 UIL Class 6A Boys Soccer State Championship Team — College Park High School\n**Context:** The board will formally recognize the College Park High School boys soccer team for winning the 2026 UIL Class 6A State Championship. This is a celebratory, non-action item honoring student athletic achievement.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Consent Agenda (Section VI)\n*Consent agenda items are typically voted on as a group without individual discussion unless a trustee requests an item be pulled for separate consideration.*\n\n### VI.A. Consider and Approve Minutes\n**Context:** The board will vote to approve the official minutes from a previous board meeting, confirming they are an accurate record of what occurred. This is a standard procedural requirement for all public governing bodies.\n\n**Historical Summary:** Approval of meeting minutes is a routine agenda item at every regular CISD board meeting, consistent with prior meetings in August, September, and October 2025.\n\n---\n\n### VI.B. Consider and Approve Amendment to the Budget\n**Context:** The board will consider approving a change to the district's current operating budget. Budget amendments are common mid-year or end-of-year adjustments made when revenues or expenditures differ from original projections.\n\n**Historical Summary:** Budget amendments have appeared as consent agenda items in prior CISD regular meetings. No specific details about this amendment are provided in the agenda.\n\n---\n\n### VI.C. Consider on First Reading — Board Policy DBD (Local): Employment Requirements and Restrictions: Conflict of Interest\n**Context:** The board will review a proposed update to Policy DBD (Local), which sets rules about conflicts of interest for district employees. A \"first reading\" means the board is reviewing the policy for discussion — formal adoption typically occurs at a subsequent meeting.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VI.D. Consider on First Reading — Board Policy FEA (Local): Attendance: Compulsory Attendance\n**Context:** The board will review a proposed update to Policy FEA (Local), which governs the district's compliance with Texas compulsory school attendance laws. This is a first reading, meaning no final vote is expected at this meeting.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VI.E. Consider on First Reading — Board Policy FEC (Local): Attendance: Attendance for Credit\n**Context:** The board will review a proposed update to Policy FEC (Local), which sets rules about how student attendance affects their ability to earn academic credit. This is a first reading and not a final adoption vote.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VI.F. Consider on First Reading — Board Policy GC (Local): Public Notices\n**Context:** The board will review a proposed update to Policy GC (Local), which governs how the district communicates and publishes required public notices. This is a first reading, with formal adoption expected at a later meeting.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VI.G. Receive Human Resources Report and Consider and Approve Employment of Professional Personnel\n**Context:** The board will receive a staffing update from Human Resources and vote to formally approve the hiring of professional staff members. This is a routine item required for new hires to be officially authorized by the board.\n\n**Historical Summary:** Human Resources reports and employment approvals appear as regular consent agenda items at CISD board meetings, consistent with prior meetings in August, September, and October 2025.\n\n---\n\n### VI.H. Receive Financial Reports\n**Context:** The board will receive routine financial reports summarizing the district's current fiscal status, including revenues, expenditures, and fund balances. This is an informational item with no action required.\n\n**Historical Summary:** Financial reports are a standing consent agenda item at CISD regular meetings, consistent with prior meeting records provided.\n\n---\n\n### VI.I. Approval of the TCEQ Required Water Conservation and Drought Contingency Plan for the Conroe ISD Moorhead/Caney Creek Water Plant Facility\n**Context:** The board will vote to approve a state-required water conservation and drought contingency plan for the district's Moorhead/Caney Creek Water Plant. The Texas Commission on Environmental Quality (TCEQ) mandates that public water systems maintain and periodically update such plans.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Human Resources (Section VII)\n\n### VII.A. Recognize Principal for DAEP/JJAEP\n**Context:** The board will recognize a principal serving the District Alternative Education Program (DAEP) and/or Juvenile Justice Alternative Education Program (JJAEP), which serve students with disciplinary placements. This appears to be an appreciation or formal acknowledgment item.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Administration (Section VIII)\n\n### VIII.A. Reconsider and Approve the Mascot for Cartwright Junior High\n**Context:** The board will revisit and vote on the official mascot for Cartwright Junior High School. The word \"reconsider\" suggests this topic was previously discussed or voted on and is being brought back for further action or a revised decision.\n\n**Historical Summary:** No prior history about an initial mascot vote for Cartwright Junior High is available from the provided records, though the use of \"reconsider\" indicates this is not the first time the board has addressed the matter.\n\n---\n\n### VIII.B. Receive Information Regarding Senate Bill 546 Requirement for Bus Seat Belts\n**Context:** The board will receive a presentation on Texas Senate Bill 546, which relates to seat belt requirements on school buses. This is an informational item to help trustees understand any new legal obligations or implementation timelines the district may face.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VIII.C. Consider and Possibly Adopt District's Virtual School Plan\n**Context:** The board will consider formally adopting a plan for the district's virtual (online) school programming. Texas law requires districts offering virtual instruction to have an approved plan in place governing how those programs operate.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### VIII.D. Receive Information Regarding District Staffing Plan\n**Context:** The board will receive an informational update on the district's staffing plan, which may address hiring projections, staffing ratios, or workforce needs for an upcoming school year. No formal vote is indicated for this item.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Teaching and Learning (Section IX)\n\n### IX.A. Consider and Possibly Approve Library Materials in Accordance with Texas Education Code §33.026 and Board Policy EFB (Local)\n**Context:** The board will vote on approving specific library materials for district schools, as required under Texas Education Code §33.026, which sets guidelines for how school boards review and approve library content. This reflects ongoing state-level requirements for board oversight of library collections.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### IX.B. Consider and Possibly Adopt District's Special Education Homecoming Project Plan\n**Context:** The board will consider adopting a plan related to a Special Education \"Homecoming Project,\" which may involve programming or inclusion initiatives for students with disabilities. The specific nature of this project is not detailed in the agenda.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### IX.C. Receive Information Regarding The Texas Standard Character Education Program\n**Context:** The board will receive an informational presentation on the Texas Standard Character Education Program, a state-supported initiative that incorporates character development into school curriculum and culture. No formal vote is indicated for this item.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n## Business/Finance (Section X)\n\n### X.A. Receive 2026–2027 Budget Information\n**Context:** The board will receive an early look at budget projections and planning information for the 2026–2027 school year. This is an informational presentation — formal budget adoption typically occurs later in the spring or summer budget cycle.\n\n**Historical Summary:** Budget planning presentations are a regular part of the CISD spring meeting calendar. No specific details about the 2026–2027 budget figures are available from the agenda.\n\n---\n\n## Planning and Construction (Section XI)\n\n### XI.A. Consider and Approve the Selection of a Construction Manager-at-Risk for The Woodlands 9th Grade and College Park High School Renovations Project\n**Context:** The board will vote to select a Construction Manager-at-Risk (CMR) — a delivery method where a contractor is hired early to manage costs and construction — for renovation projects at The Woodlands 9th Grade campus and College Park High School. The board will also authorize district leadership to finalize and sign the related contracts. This item involves significant capital expenditure.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### XI.B. Consider and Approve the Selection of a Construction Manager-at-Risk for The Auxiliary Facility Renovations Project\n**Context:** The board will vote to select a Construction Manager-at-Risk to oversee renovations to an auxiliary district facility, and will authorize the superintendent or designee to negotiate and execute the necessary contracts. This item involves significant capital expenditure.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### XI.C. Consider and Approve the Selection of a Construction Manager-at-Risk for the Caney Creek High School Renovation and District Safety and Security Upgrades Project\n**Context:** The board will vote to select a Construction Manager-at-Risk for renovation work at Caney Creek High School combined with district-wide safety and security improvements, and will authorize leadership to finalize contracts. This item involves significant capital expenditure and touches on campus safety infrastructure.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### XI.D. Consider and Approve the Selection of a Construction Manager-at-Risk for the Anderson and Glen Loch Elementary School Additions and Renovations Project\n**Context:** The board will vote to select a Construction Manager-at-Risk for addition and renovation work at Anderson and Glen Loch Elementary Schools, and will authorize the superintendent or designee to negotiate and execute the related contracts. This item involves significant capital expenditure.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n### XI.E. Consider and Approve Annexation of San Jacinto Elementary Site into MUD 111\n**Context:** The board will vote to annex the San Jacinto Elementary School property into Municipal Utility District (MUD) 111, which may affect utility services — such as water and sewer — provided to that campus. The board will also authorize the superintendent to execute any documents needed to complete the transaction.\n\n**Historical Summary:** No prior history available yet.\n\n---\n\n*This breakdown was prepared as a public information resource for CISD community members. For full agenda documents, supporting materials, or to access the meeting virtually, visit the Conroe ISD website or the virtual meeting link above.*",
+  "meeting_notes_md": ""
+}
