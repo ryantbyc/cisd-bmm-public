@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T22:40:50.981244Z",
+  "last_updated": "2026-04-15T22:46:56.407909Z",
   "meeting_count": 206,
   "meetings": [
     {
@@ -14,7 +14,7 @@
       "types_display": [
         "Regular Meeting"
       ],
-      "item_count": 27,
+      "item_count": 26,
       "has_agenda": true,
       "has_notes": false,
       "pdf_filename": "agenda_2026-04-21_regular.pdf"
