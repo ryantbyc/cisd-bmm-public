@@ -483,17 +483,36 @@
       background: var(--bg-card);
       border-left: 4px solid var(--border-accent);
       border-radius: 8px;
-      padding: 1rem 1.2rem 0.9rem;
       margin-bottom: 1rem;
+      overflow: hidden;
     }
-    .highlights-box h3 {
+    .highlights-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; cursor: pointer; user-select: none;
+      background: none; border: none; padding: 0.75rem 1rem;
+      text-align: left; min-height: 44px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .highlights-toggle-label {
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--text-section);
-      margin: 0 0 0.6rem;
     }
+    .highlights-chevron {
+      font-size: 0.65rem;
+      transition: transform 0.18s;
+      display: inline-block;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+    .highlights-box.collapsible-open .highlights-chevron { transform: rotate(90deg); }
+    .highlights-body {
+      display: none;
+      padding: 0 1rem 0.9rem;
+    }
+    .highlights-box.collapsible-open .highlights-body { display: block; }
     .highlights-box ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -719,11 +738,29 @@
       .map(l => l.replace(/^[-*]\s*/, '').trim())
       .filter(l => l.length > 0);
     if (!items.length) return;
-    el.innerHTML = `
-      <div class="highlights-box">
-        <h3>Meeting Highlights</h3>
-        <ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>
-      </div>`;
+
+    const box = document.createElement('div');
+    box.className = 'highlights-box collapsible-open';
+
+    const btn = document.createElement('button');
+    btn.className = 'highlights-toggle';
+    btn.setAttribute('aria-expanded', 'true');
+    btn.innerHTML = `
+      <span class="highlights-toggle-label">Meeting Highlights</span>
+      <span class="highlights-chevron">▶</span>`;
+    btn.addEventListener('click', () => {
+      const open = box.classList.toggle('collapsible-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    btn.addEventListener('touchend', e => { e.preventDefault(); btn.click(); });
+
+    const body = document.createElement('div');
+    body.className = 'highlights-body';
+    body.innerHTML = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+
+    box.appendChild(btn);
+    box.appendChild(body);
+    el.appendChild(box);
   }
 
   function renderAgenda(sections) {
