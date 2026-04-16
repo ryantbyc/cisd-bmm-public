@@ -478,6 +478,34 @@
     .notes-body strong { color: var(--text-primary); }
     .notes-body hr { border: none; border-top: 1px solid var(--border-tabs); margin: 1.25rem 0; }
 
+    /* ── Meeting highlights ────────────────────────────────────── */
+    .highlights-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 1rem 1.2rem 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .highlights-box h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-section);
+      margin: 0 0 0.6rem;
+    }
+    .highlights-box ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .highlights-box li {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0.3rem;
+      color: var(--text-primary);
+    }
+    .highlights-box li:last-child { margin-bottom: 0; }
+
     /* ── Procedural items ──────────────────────────────────────── */
     .procedural-list {
       background: var(--bg-card);
@@ -559,6 +587,7 @@
     <div class="tabs" id="tabs"></div>
 
     <div id="tab-agenda" class="tab-panel active">
+      <div id="highlights-section"></div>
       <div id="procedural-section"></div>
       <div id="section-controls" class="section-controls" style="display:none">
         <span>Sections:</span>
@@ -680,6 +709,21 @@
       label.classList.add('collapsed');
       wrapper.classList.add('collapsed');
     }
+  }
+
+  function renderHighlights(bullets) {
+    const el = document.getElementById('highlights-section');
+    if (!el || !bullets) return;
+    const items = bullets
+      .split('\n')
+      .map(l => l.replace(/^[-*]\s*/, '').trim())
+      .filter(l => l.length > 0);
+    if (!items.length) return;
+    el.innerHTML = `
+      <div class="highlights-box">
+        <h3>Meeting Highlights</h3>
+        <ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>
+      </div>`;
   }
 
   function renderAgenda(sections) {
@@ -889,6 +933,10 @@
         document.getElementById('page-meta').textContent = data.date_display;
 
         buildTabs(data.has_agenda, data.has_notes);
+
+        if (data.highlights) {
+          renderHighlights(data.highlights);
+        }
 
         if (data.has_agenda && data.sections) {
           renderAgenda(data.sections);
