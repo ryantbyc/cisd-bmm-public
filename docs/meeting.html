@@ -478,7 +478,7 @@
     .notes-body strong { color: var(--text-primary); }
     .notes-body hr { border: none; border-top: 1px solid var(--border-tabs); margin: 1.25rem 0; }
 
-    /* ── Meeting highlights ────────────────────────────────────── */
+    /* ── Agenda highlights ─────────────────────────────────────── */
     .highlights-box {
       background: var(--bg-card);
       border-left: 4px solid var(--border-accent);
@@ -508,6 +508,22 @@
       opacity: 0.7;
     }
     .highlights-box.collapsible-open .highlights-chevron { transform: rotate(90deg); }
+    .highlights-preview {
+      padding: 0 1rem 0.75rem;
+      position: relative;
+      max-height: 8rem;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .highlights-preview::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2.5rem;
+      background: linear-gradient(transparent, var(--bg-card));
+      pointer-events: none;
+    }
+    .highlights-box.collapsible-open .highlights-preview { display: none; }
     .highlights-body {
       display: none;
       padding: 0 1rem 0.9rem;
@@ -739,26 +755,39 @@
       .filter(l => l.length > 0);
     if (!items.length) return;
 
+    const listHtml = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+
     const box = document.createElement('div');
-    box.className = 'highlights-box collapsible-open';
+    box.className = 'highlights-box'; // closed by default
 
     const btn = document.createElement('button');
     btn.className = 'highlights-toggle';
-    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-expanded', 'false');
     btn.innerHTML = `
-      <span class="highlights-toggle-label">Meeting Highlights</span>
+      <span class="highlights-toggle-label">Agenda Highlights</span>
       <span class="highlights-chevron">▶</span>`;
-    btn.addEventListener('click', () => {
+
+    const toggle = () => {
       const open = box.classList.toggle('collapsible-open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    btn.addEventListener('touchend', e => { e.preventDefault(); btn.click(); });
+    };
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('touchend', e => { e.preventDefault(); toggle(); });
 
+    // Preview — shown when collapsed, fades out at bottom
+    const preview = document.createElement('div');
+    preview.className = 'highlights-preview';
+    preview.innerHTML = listHtml;
+    preview.addEventListener('click', toggle);
+    preview.addEventListener('touchend', e => { e.preventDefault(); toggle(); });
+
+    // Full body — shown when expanded
     const body = document.createElement('div');
     body.className = 'highlights-body';
-    body.innerHTML = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+    body.innerHTML = listHtml;
 
     box.appendChild(btn);
+    box.appendChild(preview);
     box.appendChild(body);
     el.appendChild(box);
   }
