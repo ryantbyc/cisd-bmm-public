@@ -692,6 +692,7 @@
     </div>
 
     <div id="tab-notes" class="tab-panel">
+      <div id="notes-highlights-section"></div>
       <div id="notes-controls" class="section-controls" style="display:none">
         <span>Sections:</span>
         <button class="ctrl-btn" id="btn-notes-expand">Expand All</button>
@@ -803,7 +804,8 @@
   }
 
   function renderHighlights(bullets) {
-    const el = document.getElementById('highlights-section');
+    const targetId = arguments[2] || 'highlights-section';
+    const el = document.getElementById(targetId);
     if (!el || !bullets) return;
     const items = bullets
       .split('\n')
@@ -1008,7 +1010,7 @@
     const hlRe = /^## (?:Meeting|Agenda) Highlights\n(?:\*[^\n]*\*\n)?\n?([\s\S]*?)\n\n---/m;
     const hlMatch = markdown.match(hlRe);
     if (hlMatch) {
-      renderHighlights(hlMatch[1].trim(), 'Meeting Highlights');
+      renderHighlights(hlMatch[1].trim(), 'Meeting Highlights', 'notes-highlights-section');
       markdown = markdown.replace(hlRe, '').replace(/^\n+/, '');
     }
 
