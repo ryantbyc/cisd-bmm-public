@@ -102,7 +102,56 @@
     .header-inner {
       max-width: 900px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    /* ── Hamburger nav ─────────────────────────────────────────── */
+    .header-nav { position: relative; }
+
+    .hamburger-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border-radius: 4px;
+    }
+    .hamburger-btn:hover { background: rgba(255,255,255,0.12); }
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-header);
+      border-radius: 2px;
+      transition: opacity 0.15s;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      min-width: 180px;
+      z-index: 200;
+      overflow: hidden;
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.75rem 1.1rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover { background: var(--bg-hover, rgba(0,0,0,0.05)); }
 
     .header-brand h1 {
       font-size: 1.75rem;
@@ -402,6 +451,14 @@
       <h1>CISD Board Meeting Monitor</h1>
       <p>Constituent summaries of Conroe ISD Board of Trustees meetings</p>
     </div>
+    <div class="header-nav">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-dropdown" id="nav-dropdown" hidden>
+        <a href="https://cisd-policy.boardmonitor.app" target="_blank" rel="noopener">Policy Tracker</a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -498,7 +555,7 @@
     ).join('');
     const badges = [];
     if (m.has_agenda) badges.push('<span class="badge badge-agenda">Agenda Breakdown</span>');
-    if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Notes</span>');
+    if (m.has_notes)  badges.push('<span class="badge badge-notes">Meeting Summary</span>');
     const card = document.createElement('a');
     card.className = 'meeting-card';
     card.href = `meeting.html?id=${encodeURIComponent(m.id)}`;
@@ -701,6 +758,18 @@
   document.getElementById('signup-email').addEventListener('keydown', e => {
     if (e.key === 'Enter') document.getElementById('signup-btn').click();
   });
+
+  // Hamburger menu
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navDropdown  = document.getElementById('nav-dropdown');
+  hamburgerBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = navDropdown.hidden;
+    navDropdown.hidden = !open;
+    hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', () => { navDropdown.hidden = true; hamburgerBtn.setAttribute('aria-expanded','false'); });
+  navDropdown.addEventListener('click', e => e.stopPropagation());
 </script>
 
 </body>
