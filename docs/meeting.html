@@ -812,6 +812,7 @@
     if (!items.length) return;
 
     const listHtml = `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+    const label = arguments[1] || 'Agenda Highlights';
 
     const box = document.createElement('div');
     box.className = 'highlights-box'; // closed by default
@@ -820,7 +821,7 @@
     btn.className = 'highlights-toggle';
     btn.setAttribute('aria-expanded', 'false');
     btn.innerHTML = `
-      <span class="highlights-toggle-label">Agenda Highlights</span>
+      <span class="highlights-toggle-label">${label}</span>
       <span class="highlights-chevron">▶</span>`;
 
     const toggle = () => {
@@ -1002,6 +1003,15 @@
   }
 
   function renderNotes(markdown) {
+    // Extract ## Meeting Highlights block and render it as a collapsible box,
+    // then strip it from the markdown so it doesn't render as plain text too.
+    const hlRe = /^## (?:Meeting|Agenda) Highlights\n(?:\*[^\n]*\*\n)?\n?([\s\S]*?)\n\n---/m;
+    const hlMatch = markdown.match(hlRe);
+    if (hlMatch) {
+      renderHighlights(hlMatch[1].trim(), 'Meeting Highlights');
+      markdown = markdown.replace(hlRe, '').replace(/^\n+/, '');
+    }
+
     const notesEl = document.getElementById('notes-body');
     if (typeof marked !== 'undefined') {
       notesEl.innerHTML = marked.parse(markdown);
