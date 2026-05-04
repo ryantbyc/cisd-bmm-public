@@ -1,0 +1,16 @@
+# CISD Meeting Monitor
+
+> Unofficial constituent resource providing board meeting notes, agendas, and summaries for Conroe Independent School District (CISD), Montgomery County, Texas. Not affiliated with or endorsed by CISD.
+
+This site is a client-side single-page application. All meeting data is available via the API below.
+
+## Data
+
+- [Meeting Index (JSON)](https://cisd.boardmonitor.app/data/index.json): Index of all board meetings with dates, types, and agenda item counts.
+- Individual meetings are available at: `https://cisd.boardmonitor.app/data/{YYYY-MM-DD}_{type}.json`
+
+## Related Sites
+
+- [Policy Tracker](https://cisd-policy.boardmonitor.app) — CISD board policy change history
+- [Finance Tracker](https://cisd-finance.boardmonitor.app) — CISD financial transparency data
+- [Book Tracker](https://cisd-books.boardmonitor.app) — Library book challenges and removals

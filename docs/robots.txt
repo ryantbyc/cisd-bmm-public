@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cisd.boardmonitor.app/llms.txt
